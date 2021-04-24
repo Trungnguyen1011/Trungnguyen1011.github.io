@@ -1,0 +1,42 @@
+.header {
+  padding-top: 40px;
+  margin: 20px 50px 25px 50px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 40px;
+}
+.headline {
+  font-weight: 300;
+  font-size: 200%;
+}
+.bold {
+  font-weight: 700;
+}
+.italic {
+  font-style: italic;
+}
+a {
+  color: rgb(93, 93, 255);
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(24, 24, 223);
+  text-decoration: underline;
+}
+img {
+  margin: 3% 15% 2% 15%;
+  width: 70%;
+  height: auto;
+}
+
+#mainbody {
+  background-color: white;
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
+.footer {
+  background-color: rgb(248, 234, 108);
+  margin: 0px 50px 20px 50px;
+  height: auto;
+}

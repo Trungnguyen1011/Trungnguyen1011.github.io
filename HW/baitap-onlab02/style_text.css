@@ -1,0 +1,26 @@
+h1,
+h2,
+p,
+ul {
+  font-family: sans-serif;
+  color: rgb(73, 73, 73);
+}
+
+p,
+h2 {
+  margin-left: 50px;
+  margin-right: 50px;
+  line-height: 1.7;
+}
+ul {
+  line-height: 1.7;
+  margin-left: 80px;
+  margin-right: 50px;
+}
+.pfooter {
+  margin: 0;
+}
+.pfooter2 {
+  font-size: 17px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}

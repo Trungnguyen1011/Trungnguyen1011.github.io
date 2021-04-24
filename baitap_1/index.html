@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>[Java Full Stack 04] Web căn bản Bài tập buổi 1</title>
+    <link
+      rel="shortcut icon"
+      href="https://i.pinimg.com/originals/c9/c9/6d/c9c96dee7995e124d97058733c616338.jpg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <h1>Tại sao Java vẫn sống sót một cách hoàn hảo ? Phần 1</h1>
+    <p>16 tháng 04, 2021</p>
+    <p>
+      Bài dịch từ Medium Tôi viết bài này như một lời hồi đáp cho tác giả của:
+      Tại sao Java đang chết dần ?. Tôi có để lại một bình luận dưới bài viết đó
+      mà không ngờ rằng nhận được rất nhiều sự đồng tình, thậm chí nó trở thành
+      "top comment". Vậy nên tôi nghĩ mình phải trình bày luận điểm đối nghịch
+      của mình một cách đầy đủ và rõ ràng.
+    </p>
+    <h3>Tuyên bố "Java đang chết dần" sai ở đâu ?</h3>
+    <p>
+      Bài báo : "Java đang chết dần" nhận được 70+ lời nhận xét. Hầu hết những
+      bình luận này là phê phán, không đồng tình. Mỗi bình luận có từ vài chục
+      đến vài trăm "like". Sao mọi người lại nhận xét tiêu cực như vậy? Lý do
+      hiển nhiên: tác giả đã sử dụng lối hành văn dễ gây kích động với những
+      tuyên ngôn gây tranh cãi, vả lại khác xa với thực tế khi lập trình Java.
+      Nào, cùng phản biện nhé !
+    </p>
+    <pre>
+             Spring thiết lập tính năng Autowriting (bean injection) đằng sau hậu trường. Nhưng thế thì Lombok tồn tại ở đâu
+            trong bối cảnh ứng dụng? Và cách truyền tải thông điệp giữa 2 bên như thế nào?</pre
+    >
+    <p>
+      Những ai từng làm việc với những công nghệ trên đây đều hiểu phát biểu này
+      là sai, và vô nghĩa. Lombok là một thư viện compile-time và Spring là thư
+      viện runtime. Chúng làm việc ở cấp độ khác nhau và thời gian khác nhau của
+      vòng đời ứng dụng và không tương tác trực tiếp. Vậy câu trả lời cho "
+      Lombok tồn tại ở đâu trong bối cảnh ứng dụng" là " Chả ở đâu cả".
+    </p>
+    <pre>
+            Trọng tâm của Java dường như vẫn tập trung vào các quy tắc ngớ ngẩn quy định "tên lớp" nên là gì, thuộc packages 
+            nào, và liệu các Biến nào nên private hay protected. Nghiêm túc đấy, ai quan tâm chứ? </pre
+    >
+    <p>
+      Tranh luận về việc mọi người đều trưởng thành và biết mình đang làm gì,
+      thực sự là một điều nông cạn. Vấn đề là các dự án lớn kéo dài cần sự bền
+      vững và được tạo ra bởi các team lập trình lớn cần có quy tắc; nếu không,
+      họ sẽ thất bại. Một dự án lớn cũng giống như một thành phố lớn: Nó cần có
+      cơ sở kiến ​​trúc, quy hoạch, tách biệt các mối quan tâm, khu vực riêng tư
+      và công cộng. Nếu một lập trình viên có kỹ năng tách các cấu trúc ngôn ngữ
+      thành "public" và "private", rất có thể họ sẽ tạo ra các "lối đi" dẫn
+      những lập trình viên khác/ mới tham gia vào dự án đi đúng cách, tiết kiệm
+      thời gian của họ và ẩn cơ sở hạ tầng phụ trợ “ngầm” để không ai bị lạc vào
+      đó. <br />Có nhiều nhận định gây tranh cãi hơn trong bài viết “Tại sao
+      Java đang chết dần”, nhưng mục tiêu của tôi ở đây không phải để phân tích
+      chi tiết nữa. Điều tôi muốn làm là tận dụng cơ hội để nói về hiện tại của
+      Java <br />
+      Trong nhiều năm, Java là lựa chọn hàng đầu trong số các ngôn ngữ lập trình
+      và đồng thời là lựa chọn hàng đầu của các nhà phê bình. Không phải vì nó
+      xấu mà bởi vì nó là một điều lớn lao. Nhưng bây giờ thì sao? Java vẫn là
+      một thứ gì đó lớn lao hay nó đang “chết” như một số người nói? Hãy cùng
+      thảo luận về các chủ đề quan trọng nhất và gây tranh cãi.
+    </p>
+    <h3>Cú pháp</h3>
+    <img src="https://miro.medium.com/max/700/1*UlNAxLhh3IWdFfmlfnzOqQ.jpeg" />
+    <p>
+      Cú pháp của Java thường bị chỉ trích nhiều nhất: “không ngắn gọn”, “không
+      phù hợp với các tác vụ hiện đại”, “quá nhiều bản soạn sẵn”, v.v. Câu trả
+      lời đúng duy nhất cho những “tranh luận” này là hiển thị mã. Tôi sẽ không
+      thảo luận về các tính năng cú pháp đặc biệt ở đây; có nhiều hướng dẫn chi
+      tiết bao gồm tất cả các sắc thái của cú pháp Java rồi. Thay vào đó, tôi đã
+      chọn 5 đoạn mã làm ví dụ để bạn hiểu về cách Java hiện đại có thể hoạt
+      động cho các tác vụ thực tế khác nhau.
+    </p>
+    <pre>
+import static spark.Spark.*;
+        public class HelloWorld {
+            public static void main(String[] args) {
+                port(80);
+                get("/hello", (request, response) -> "Hello World");
+            }
+        }
+    </pre>
+
+    <p>
+      Mã này khởi động một máy chủ web đơn giản bằng Spark Java trên cổng 80 với
+      phương thức HTTP GET và đường dẫn ngữ cảnh / hello trả về một chuỗi không
+      đổi khi được yêu cầu. Khá đơn giản và ngắn gọn, phải không?
+    </p>
+
+       <pre>...
+            OrderRepository orders;
+            QOrder qorder = QOrder.order;
+            DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            
+            public Iterable<rder> getShopOrdersByDate(ShopId id, ZonedDateTime date){
+                return orders.findAll(
+                  qorder.shopId.eq(id).and(qorder.date.eq(yyyyMMdd.format(date)))
+                );
+            }
+            ...
+        </pre>
+
+            <p>Mã này sử dụng sự kết hợp của Querydsl và Spring Data để tìm nạp thông tin từ 
+                cơ sở dữ liệu SQL. Mọi thứ trông khá đơn giản: phương thức getShopOrdersByDate 
+                trả về các đơn đặt hàng của một cửa hàng cụ thể, vào một ngày cụ thể với định 
+                dạng ngày bổ sung. Phần thú vị: Không có SQL ở đây, chỉ có các cấu trúc Java,
+                 được dịch sang SQL an toàn bên trong các thư viện sau này. Điều này có nghĩa là bản thân truy vấn là typesafe (an toàn kiểu chữ) và được kiểm tra một cách đáng tin cậy trong compile-time, không phải ngẫu nhiên trong runtime. Ngoài ra, IDE giúp bạn tự động hoàn thành, như thường lệ với các mã Java khác, mọi việc giờ dễ dàng hơn nhiều. Rất nhiều cơ sở dữ liệu được hỗ trợ sẵn sàng, như PostgreSQL, MySQL, Oracle và thậm chí cả MongoDB. Ngoài ra, bạn không phải thay đổi mã truy vấn nếu bạn muốn hoán đổi chúng.</p>
+  <pre>import java.nio.file.Files;
+    import java.util.stream.Stream;
+    import static java.nio.file.Paths.get;
+    import static java.util.stream.Collectors.*;
+    
+    public class Example {
+         public static void main(String[] args) throws Exception {
+            List<String> fileLines = Files.readAllLines(get("huge.txt"));
+            String fileStats = fileLines.parallelStream()
+                    .flatMap(line -> Stream.of(line.split("\\s+")))
+                    .filter(word -> !"dumb".equalsIgnoreCase(word))
+                    .collect(groupingBy(word -> word.charAt(0), counting()))
+                    .entrySet().parallelStream()
+                    .map(letterStats -> letterStats.getKey() + ":" + letterStats.getValue())
+                    .collect(joining("\n"));
+            System.out.println(fileStats);
+        }
+    }</pre>
+
+    <p>Không có thư viện bổ sung nào ở đây, chỉ là Java thuần túy. Đọc tất cả các dòng từ tệp khổng lồ, chia chúng thành các từ riêng biệt, lọc ra các từ khó hiểu để mọi thứ rõ ràng, nhóm các từ theo chữ cái đầu tiên, đếm số từ có trong mỗi nhóm, tạo biểu diễn chuỗi của các nhóm kết quả và số lượng, in kết quả. Dễ đọc và dễ bảo trì. Và tất nhiên, mọi thứ đều được thực hiện theo các tác vụ song song để tăng tốc độ phù hợp để con quái vật 16-core mới của bạn biện minh cho chi phí của nó. Trên máy tính xách tay 4-core của tôi với Java 15, lệnh này thực thi trung bình trong sáu giây cho một tệp văn bản 1,2 Gb chứa đầy các từ ngẫu nhiên. Không tệ chút nào !</p>
+    <pre>...
+        public MultiLayerNetwork createModel() {
+            return new MultiLayerNetwork(new NeuralNetConfiguration.Builder()
+                    .regularization(true).l2(0.001)
+                    .learningRate(0.01)
+                    .weightInit(WeightInit.XAVIER)
+                    .activation(Activation.RELU)
+                    .optimizationAlgo(STOCHASTIC_GRADIENT_DESCENT)
+                    .updater(new Nesterovs(0.9))
+                    .list()
+                    .layer(convolution(5, 25).nIn(3).build())
+                    .layer(maxPooling(2).build())
+                    .layer(convolution(3, 50).build())
+                    .layer(maxPooling(2).build())
+                    .layer(convolution(3, 100).build())
+                    .layer(maxPooling(2).build())
+                    .layer(dense(200).dropOut(0.5).build())
+                    .layer(dense(200).dropOut(0.5).build())
+                    .layer(outputClassification(10))
+                    .setInputType(convolutionalFlat(28, 28, 3))
+                    .backprop(true).pretrain(false)
+                    .build());
+        }
+        
+        ConvolutionLayer.Builder convolution(int filterSize, int filterCount) {
+            return new ConvolutionLayer.Builder(filterSize, filterSize)
+                    .activation(IDENTITY).nOut(filterCount);
+        }
+        
+        SubsamplingLayer.Builder maxPooling(int size) {
+            return new SubsamplingLayer.Builder(PoolingType.MAX)
+                    .kernelSize(size, size).stride(size, size);
+        }
+        
+        DenseLayer.Builder dense(int size) {
+            return new DenseLayer.Builder().nOut(size);
+        }
+        
+        OutputLayer outputClassification(int numOfClasses) {
+            return new OutputLayer.Builder(LossFunction.MCXENT)
+                    .nOut(numOfClasses).activation(SOFTMAX).build();
+        }
+        ...
+        Ví dụ đơn giản này cho thấy giai đoạn chuẩn bị "neural network structure" trước giai đoạn "learning", sử dụng Dl4j. Những ai thuộc lĩnh vực Deep learning sẽ dễ dàng nhận ra nhiều từ quen thuộc. Không có gì phi thường. Đúng thế, bạn có thể dùng Java cho Deep learning, Machine learning.
+        
+        import lombok.AllArgsConstructor;
+        import lombok.Data;
+        
+       
+        </pre>
+        <p> Bạn ghét boilerplate? Vậy thử Lombok xem. Đoạn code này hiển thị một lớp dữ liệu đầy đủ tính năng với getters, setters, equals, hashcode, toString trên tất cả các trường được thực hiện đúng và cuối cùng là AllArgsConstructor. Tất nhiên, bạn có thể ghi đè lên bất kỳ mục nào trong số đó nếu bạn muốn. </br>
+
+            Những người từ bên ngoài hệ sinh thái Java thường tranh luận rằng "Lombok làm cho Java không phải là Java." Tôi không đồng ý: Lombok LÀ Java. Nó là một phần của hệ sinh thái Java hiện đại, sử dụng cơ chế Java hợp pháp để thêm chức năng của nó, giúp bạn tạo code Java, hầu như không có nhược điểm và được rất rất nhiều nhà phát triển Java sử dụng và yêu thích. Bao nhiêu người sử dụng ư? Một trong những Java IDE phổ biến nhất tính số lượt tải xuống plugin Lombok là hơn 11 triệu lượt. Đó là một công cụ để làm cho Java tốt hơn, vì vậy theo nghĩa thực tế, nó chính là Java đối với hàng triệu người sử dụng nó. Tuy nhiên, vẫn có một bộ phận cộng đồng Java chống lại Lombok và họ có toàn quyền làm như vậy - nếu bạn không thích Lombok, không ai ép buộc bạn phải sử dụng nó.</br>
+            
+            Bây giờ hãy tưởng tượng những ví dụ này sẽ trông như thế nào trong các ngôn ngữ khác. Bạn có thể sẽ tìm thấy các ngôn ngữ dùng ít kí tự hơn được sử dụng để đạt được các mục tiêu tương tự. Nhưng liệu code đó có đáng tin cậy, dễ đọc, có thể bảo trì và nhanh chóng như Java không? Tôi không nghĩ vậy.</br>
+            
+            Một điều quan trọng khác liên quan đến cú pháp là hỗ trợ IDE. Đó không phải là một thứ lý thuyết trừu tượng, như cấu trúc ngôn ngữ mạnh mẽ như thế nào hay các DEV phải code bao nhiêu kí tự. IDE thêm một lớp thực tế chuyển đổi tất cả các câu hỏi trừu tượng thành câu hỏi này: DEV sẽ mất bao nhiêu thời gian cho một tác vụ cụ thể. Sử dụng ngôn ngữ được thiết kế tốt kết hợp với IDE hiện đại, các nhà phát triển có thể đạt được mục tiêu nhanh hơn nhiều so với việc sử dụng các ngôn ngữ mạnh hơn hoặc ngắn gọn hơn nhưng ít thân thiện hơn với IDE. Java có được sự hỗ trợ tốt nhất từ IDE, nhờ vào cú pháp của nó: Nó không quá phức tạp và đồng thời không quá tự do lựa chọn, vì vậy IDE có thể hiểu bối cảnh bạn hiện đang làm việc và dự đoán những gì bạn muốn làm tiếp theo với độ chính xác cao.</br>
+            
+            Điều cuối cùng, cú pháp của Java cho phép các kiểu lập trình khác nhau được sử dụng. Mã của bạn có thể được viết theo mô hình hướng đối tượng, nơi các đối tượng tương tác với nhau; trong một mô hình thủ tục, với trình tự của các lệnh gọi thủ tục mệnh lệnh thay đổi trạng thái toàn cục; hoặc trong một mô hình chức năng, nơi bạn soạn và áp dụng các chức năng để đạt được mục tiêu của mình. Đôi khi người ta phân biệt nhiều mô hình hơn - ví dụ, Java rất phù hợp cho các mô hình hướng khía cạnh hoặc dựa trên tác nhân. Java cung cấp cho bạn sự linh hoạt tuyệt vời trong cách bạn có thể suy nghĩ về nhiệm vụ của mình, vì vậy nó đã được chuẩn bị khá kỹ lưỡng để tồn tại sau những "mốt" lập trình thay đổi định kì. </br>
+            
+            Tóm lại, không có vấn đề gì với cú pháp của Java. Nó tương đối đơn giản, linh hoạt. Ngoài ra, nó cho phép các IDE trợ giúp hiệu quả các nhà phát triển theo nhiều cách, cải thiện đáng kể năng suất của họ. Nếu bạn biết rõ về Java, viết code rõ ràng và sử dụng bộ công cụ phù hợp cho nhiệm vụ của mình, các chương trình của bạn sẽ đẹp, dễ bảo trì và ngắn gọn. Đừng để mọi người lừa dối bạn về chủ đề này.</br>
+            
+            (còn tiếp)
+        </p>
+            <a href="https://techmaster.vn/posts/36408/tai-sao-java-van-song-sot-mot-cach-hoan-hao-phan-1">Link goc</a> </br>
+            <b>Tham khảo lộ trình<a href="https://java.techmaster.vn/">Java Spring Boot Full Stack 7</a> tháng của Techmaster</b>
+  </body>
+</html>

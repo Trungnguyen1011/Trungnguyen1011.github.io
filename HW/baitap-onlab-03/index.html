@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai tap Flexbox</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="value.css" />
+  </head>
+  <body>
+    <h1 class="heading">Thực hành Flex</h1>
+    <p class="chuthich">
+      Sử dụng flex để layout cho bài tập dưới đây: <br />
+      <br />
+      1.Code giao diện tương tự trong ảnh (chữ bên trong chỉ để mô tả kích
+      thước). Yêu cầu nội dung phải khít với chiều rộng trình duyệt. <br />
+      Chiều rộng khối màu đỏ lớn hơn 2 khối còn lại
+    </p>
+    <div id="bailam">
+      <div class="flexbox wrap">
+        <div class="red bigparent"></div>
+        <div class="smallparent">
+          <div class="smallflexbox">
+            <div class="green height_200"></div>
+            <div class="blue height_200"></div>
+          </div>
+        </div>
+      </div>
+      <div class="khoangcach">
+        <p class="chuthich">2. Khoảng cách màu trắng là 15px</p>
+      </div>
+      <div class="flexbox nowrap">
+        <div class="red bigparent"></div>
+        <div class="white_column"></div>
+        <div class="smallparent">
+          <div class="smallflexbox">
+            <div class="green height_200"></div>
+            <div class="blue height_200"></div>
+          </div>
+        </div>
+      </div>
+      <div class="khoangcach">
+        <p class="chuthich">3. Ba cột bằng nhau</p>
+      </div>
+      <div class="flexbox wrap">
+        <div class="parent red"></div>
+        <div class="parent green"></div>
+        <div class="parent blue"></div>
+      </div>
+      <div class="khoangcach">
+        <p class="chuthich">
+          4. 3 cột bằng nhau và khoảng cách giữa các khối là 15px
+        </p>
+      </div>
+      <div class="flexbox nowrap">
+        <div class="parent red"></div>
+        <div class="white_column"></div>
+        <div class="parent green"></div>
+        <div class="white_column"></div>
+        <div class="parent blue"></div>
+      </div>
+    </div>
+  </body>
+</html>

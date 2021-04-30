@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+#container {
+  opacity: 100%;
+}
+#navigation {
+  width: 100%;
+  height: 60px;
+  background-color: #34465c;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  width: 90%;
+}
+.avatar {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 20px;
+}
+.menu_list {
+  display: flex;
+}
+/* list-style-type hien thi dau cham the li*/
+.menu_list li {
+  list-style-type: none;
+  font-weight: 800;
+}
+.menu_list li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 20px;
+}
+.caret {
+  margin-left: 8px;
+}
+.vd {
+  position: relative;
+  top: 400px;
+  right: 300px;
+}

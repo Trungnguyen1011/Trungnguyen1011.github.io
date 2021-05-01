@@ -248,7 +248,7 @@ video
 */
 
 .video_container {
-  height: 860;
+  height: 860px;
   width: 100%;
   display: flex;
   justify-content: center;

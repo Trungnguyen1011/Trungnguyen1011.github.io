@@ -257,7 +257,10 @@ video
 }
 .video_container iframe {
   padding: 80px;
+  width: 1220px;
+  height: 700px;
 }
+
 /*
 
 footer 

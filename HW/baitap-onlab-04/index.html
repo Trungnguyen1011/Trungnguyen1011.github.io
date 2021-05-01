@@ -12,7 +12,7 @@
     <!-- font chu Roboto -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
       rel="stylesheet"
     />
     <!-- icon font-awesome-->
@@ -24,36 +24,60 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="div_style.css" />
     <link rel="stylesheet" href="text.css" />
+    <link rel="stylesheet" href="link_style.css" />
     <title>Techmaster Việt Nam</title>
   </head>
   <body>
     <!-- navigator bar-->
     <div id="page">
       <div id="navigator" class="shadow">
-        <img
-          class="logo_techmaster"
-          src="https://techmaster.vn/resources/image/new_logo.png"
-          alt="techmaster.com"
-        />
-        <div class="navigator_logo">
+        <a href="https://techmaster.vn/">
           <img
-            src="https://techmaster.vn/media/static/crop/c20lgns51co75s0erhc0"
-            alt="avatar"
+            class="logo_techmaster"
+            src="https://techmaster.vn/resources/image/new_logo.png"
+            alt="techmaster.com"
           />
+        </a>
+
+        <div class="navigator_logo">
+          <a href="#"
+            ><img
+              src="https://techmaster.vn/media/static/crop/c20lgns51co75s0erhc0"
+              alt="avatar"
+            />
+          </a>
           <div class="navigator_cart">
-            <i class="fas fa-shopping-cart shopping-cart-top-menu"> </i>
+            <a href="https://techmaster.vn/gio-hang"
+              ><i class="fas fa-shopping-cart shopping-cart-top-menu"> </i
+            ></a>
             <div id="zero"><p>0</p></div>
           </div>
           <ul class="navigator_menu">
-            <li>chúng tôi <i class="fas fa-caret-down"></i></li>
-            <li>việc làm</li>
-            <li>trải nghiệm</li>
-            <li>blog</li>
-            <li>khai giảng</li>
-            <li>sản phẩm học viên</li>
-            <li>trực tuyến</li>
-            <li>phòng lab</li>
-            <li>lộ trình <i class="fas fa-caret-down"></i></li>
+            <li>
+              <a href="#">chúng tôi <i class="fas fa-caret-down"></i> </a>
+            </li>
+            <li><a href="https://techmaster.vn/viec-lam">việc làm</a></li>
+            <li><a href="https://techmaster.vn/trai-nghiem">trải nghiệm</a></li>
+            <li><a href="https://techmaster.vn/posts">blog</a></li>
+            <li>
+              <a href="https://techmaster.vn/trungtam/lich-khai-giang"
+                >khai giảng</a
+              >
+            </li>
+            <li>
+              <a href="https://techmaster.vn/san-pham-hoc-vien"
+                >sản phẩm học viên</a
+              >
+            </li>
+            <li>
+              <a href="https://techmaster.vn/khoa-hoc/truc-tuyen">trực tuyến</a>
+            </li>
+            <li>
+              <a href="https://techmaster.vn/khoa-hoc/phong-lab">phòng lab</a>
+            </li>
+            <li>
+              <a href="#">lộ trình <i class="fas fa-caret-down"></i></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -62,58 +86,75 @@
       <div id="mainbody">
         <div class="lo_trinh_top">
           <div class="lo_trinh_top_left">
-            <img
-              src="https://techmaster.vn/media/static/crop/c1i3rak51cochrklnqeg"
-              alt="Javaaaa"
-            />
+            <a href="https://java.techmaster.vn/">
+              <img
+                src="https://techmaster.vn/media/static/crop/c1i3rak51cochrklnqeg"
+                alt="Javaaaa"
+              />
+            </a>
           </div>
           <div class="lo_trinh_top_right">
             <ul>
               <li>
-                <img
-                  src="https://techmaster.vn/media/static/8103/c257rvc51coar841icmg"
-                  alt="doi tuong"
-                />
-                <div class="lo_trinh_top_right_detail">
-                  <p>Đối tượng Callable và callAsFunction trong Swift</p>
-                  <p class="chuthich">Techmaster Team</p>
-                </div>
+                <a
+                  href="https://techmaster.vn/posts/36438/doi-tuong-callable-va-callasfunction-trong-swift"
+                >
+                  <img
+                    src="https://techmaster.vn/media/static/8103/c257rvc51coar841icmg"
+                    alt="doi tuong"
+                  />
+
+                  <div class="lo_trinh_top_right_detail">
+                    <p>Đối tượng Callable và callAsFunction trong Swift</p>
+                    <p class="chuthich">Techmaster Team</p>
+                  </div>
+                </a>
               </li>
               <li>
-                <img
-                  src="https://techmaster.vn/media/static/53/c257b8s51coar841icm0"
-                  alt="reactjs"
-                />
-                <div class="lo_trinh_top_right_detail">
-                  <p>Hướng dẫn sử dụng React Router và Redux Toolkit</p>
-                  <p class="chuthich">Đặng Quang Huy</p>
-                </div>
+                <a
+                  href="https://techmaster.vn/posts/36409/huong-dan-su-dung-react-router-va-redux-toolkit"
+                  ><img
+                    src="https://techmaster.vn/media/static/53/c257b8s51coar841icm0"
+                    alt="reactjs"
+                  />
+                  <div class="lo_trinh_top_right_detail">
+                    <p>Hướng dẫn sử dụng React Router và Redux Toolkit</p>
+                    <p class="chuthich">Đặng Quang Huy</p>
+                  </div>
+                </a>
               </li>
               <li>
-                <img
-                  src="https://techmaster.vn/media/static/8103/c24cqu451coar841ich0"
-                  alt="sinhvien"
-                />
-                <div class="lo_trinh_top_right_detail">
-                  <p>Sinh viên đại học có cần học một cái nghề?</p>
-                  <p class="chuthich">Techmaster Team</p>
-                </div>
+                <a
+                  href="https://techmaster.vn/posts/36434/sinh-vien-dai-hoc-co-can-hoc-mot-cai-nghe"
+                  ><img
+                    src="https://techmaster.vn/media/static/8103/c24cqu451coar841ich0"
+                    alt="sinhvien"
+                  />
+                  <div class="lo_trinh_top_right_detail">
+                    <p>Sinh viên đại học có cần học một cái nghề?</p>
+                    <p class="chuthich">Techmaster Team</p>
+                  </div>
+                </a>
               </li>
               <li>
-                <img
-                  src="https://techmaster.vn/media/static/8103/c23tbqs51coar841icdg"
-                  alt="Swift"
-                />
-                <div class="lo_trinh_top_right_detail">
-                  <p>Phân tích cú pháp JSON trong Swift</p>
-                  <p class="chuthich">Techmaster Team</p>
-                </div>
+                <a
+                  href="https://techmaster.vn/posts/36432/phan-tich-cu-phap-json-trong-swift"
+                >
+                  <img
+                    src="https://techmaster.vn/media/static/8103/c23tbqs51coar841icdg"
+                    alt="Swift"
+                  />
+                  <div class="lo_trinh_top_right_detail">
+                    <p>Phân tích cú pháp JSON trong Swift</p>
+                    <p class="chuthich">Techmaster Team</p>
+                  </div>
+                </a>
               </li>
             </ul>
           </div>
         </div>
         <div class="lo_trinh_mid partmargin">
-          <div class="copyicon_container">
+          <a class="copyicon_container" href="https://nodejs.techmaster.vn/>">
             <svg
               width="60"
               height="60"
@@ -127,13 +168,16 @@
               ></path>
             </svg>
             <p>
-              <span class="upperbold">nodejs - react</span> <br />
+              <span class="upper">nodejs - react</span> <br />
               <span class="chuthich_mid"
                 >Giúp học viên làm quen nhanh chóng với lập trình Backend</span
               >
             </p>
-          </div>
-          <div class="copyicon_container">
+          </a>
+          <a
+            class="copyicon_container"
+            href="https://techmaster.vn/khoa-hoc/truc-tuyen"
+          >
             <svg
               width="60"
               height="60"
@@ -155,13 +199,16 @@
               ></path>
             </svg>
             <p>
-              <span class="upperbold">học trực tuyến</span><br />
+              <span class="upper">học trực tuyến</span><br />
               <span class="chuthich_mid"
                 >Hệ thống đảm bảo người dùng có thể truy cập từ bất kỳ đâu</span
               >
             </p>
-          </div>
-          <div class="copyicon_container">
+          </a>
+          <a
+            class="copyicon_container"
+            href="https://techmaster.vn/khoa-hoc/phong-lab?%C4%90%E1%BB%91i-t%C6%B0%E1%BB%A3ng-ng%C6%B0%E1%BB%9Di-h%E1%BB%8Dc=Doanh-nghi%E1%BB%87p"
+          >
             <svg
               width="60"
               height="60"
@@ -226,13 +273,16 @@
               </defs>
             </svg>
             <p>
-              <span class="upperbold">đào tạo doanh nghiệp</span><br />
+              <span class="upper">đào tạo doanh nghiệp</span><br />
               <span class="chuthich_mid"
                 >Đào tạo và hợp tác tích cực với các doanh nghiệp</span
               >
             </p>
-          </div>
-          <div class="copyicon_container">
+          </a>
+          <a
+            class="copyicon_container"
+            href="https://techmaster.vn/lo-trinh/front-end"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -254,15 +304,308 @@
               </g>
             </svg>
             <p>
-              <span class="upperbold">web frontend- reactjs</span><br />
+              <span class="upper">web frontend- reactjs</span><br />
               <span class="chuthich_mid"
                 >Làm chủ công nghệ mới nhanh chóng cơ hội nghề nghiệp tốt</span
               >
             </p>
+          </a>
+        </div>
+        <div class="lo_trinh_bot partmargin">
+          <div class="lo_trinh_bot_tieude upper">
+            <p>các lộ trình chính</p>
           </div>
+          <div class="bang_lo_trinh_bot">
+            <a class="lo_trinh_bot_detail" href="https://nodejs.techmaster.vn/">
+              <div class="hover_fix">
+                <img
+                  src="https://techmaster.vn/resources/image/nodejs-banner.png"
+                  alt="banner node"
+                />
+                <div class="lo_trinh_bot_detail_p_container">
+                  <p class="box_title">Node.js + React.js</p>
+                  <p class="lo_trinh_bot_desc">
+                    Tổng hợp 4 công nghệ liên quan đến Javascript HOT nhất hiện
+                    nay được sử dụng để xây dựng các ứng dụng Web hiện đại.
+                  </p>
+                  <div class="time_dao_tao bold"><p>8 tháng - 92 buổi</p></div>
+                </div>
+              </div>
+            </a>
+            <a class="lo_trinh_bot_detail">
+              <div class="hover_fix">
+                <img
+                  src="https://techmaster.vn/resources/image/route_java.png"
+                  alt=" banner java"
+                />
+                <div class="lo_trinh_bot_detail_p_container">
+                  <p class="box_title">Java Springboot Fullstack</p>
+                  <p class="lo_trinh_bot_desc">
+                    Lập trình Fullstack từ Frontend tới Backend với Java, khóa
+                    học duy nhất bao gồm cả kiến thức về cấu trức dữ liệu và...
+                  </p>
+                  <p class="time_dao_tao bold">7 tháng - 84 buổi</p>
+                </div>
+              </div>
+            </a>
+            <a class="lo_trinh_bot_detail">
+              <div class="hover_fix">
+                <img
+                  src="https://techmaster.vn/resources/image/route_frontend.jpg"
+                  alt="banner frontend"
+                />
+                <div class="lo_trinh_bot_detail_p_container">
+                  <p class="box_title">Webe Frontend + ReactJS</p>
+                  <p class="lo_trinh_bot_desc">
+                    Tập trung vào lập trình Web Frontend, bao gồm cả thiết kế
+                    UI/UX và các framework được sử dụng để xây dựng giao diện
+                    hot...
+                  </p>
+                  <p class="time_dao_tao bold">5 tháng - 60 buổi</p>
+                </div>
+              </div>
+            </a>
+            <a class="lo_trinh_bot_detail">
+              <div class="hover_fix">
+                <img src="https://i.imgur.com/LHrAI8g.png" alt="banner ios" />
+                <div class="lo_trinh_bot_detail_p_container">
+                  <p class="box_title">Lộ trình iOS</p>
+                  <p class="lo_trinh_bot_desc">
+                    Xây dựng và phát triển ứng dụng tương thích với hệ điều hành
+                    iOS, thông qua ngôn ngữ lập trình Swift được sáng tạo...
+                  </p>
+                  <p class="time_dao_tao bold">3 tháng - 38 buổi</p>
+                </div>
+              </div>
+            </a>
+            <a class="lo_trinh_bot_detail">
+              <div class="hover_fix">
+                <img
+                  src="https://techmaster.vn/resources/image/route_mobile.jpg"
+                  alt="mobile"
+                />
+                <div class="lo_trinh_bot_detail_p_container">
+                  <p class="box_title">Mobile React Native</p>
+                  <p class="lo_trinh_bot_desc">
+                    React Native tạo ra bởi Facebook, được sử dụng để lập trình
+                    ứng dụng cho cả 2 nền tảng di động phổ biến nhất hiện nay là
+                    iO...
+                  </p>
+                  <p class="time_dao_tao bold">5 tháng - 60 buổi</p>
+                </div>
+              </div>
+            </a>
+            <a class="lo_trinh_bot_detail">
+              <div class="hover_fix">
+                <img
+                  src="https://techmaster.vn/resources/image/route_devops.png"
+                  alt="Devops"
+                />
+                <div class="lo_trinh_bot_detail_p_container">
+                  <p class="box_title">DevOPs</p>
+                  <p class="lo_trinh_bot_desc">
+                    DevOps là một văn hóa làm việc kết hợp giữa kỹ sư phần mềm
+                    (dev) với bộ phận operator (kỹ sư hệ thống, nhân...
+                  </p>
+                  <p class="time_dao_tao bold">5 tháng - 42 buổi</p>
+                </div>
+              </div>
+            </a>
+            <a class="lo_trinh_bot_detail">
+              <div class="hover_fix">
+                <img
+                  src="https://techmaster.vn/resources/image/route_testing.jpg"
+                  alt="big data"
+                />
+                <div class="lo_trinh_bot_detail_p_container">
+                  <p class="box_title">Big Data Spark</p>
+                  <p class="lo_trinh_bot_desc">
+                    Khóa học cung cấp cho học viên cái nhìn thực tế về Big Data
+                    cũng như một số công nghệ quan trọng đang được sử dụng
+                    tại...
+                  </p>
+                  <p class="time_dao_tao bold">2 tháng - 14 buổi</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="san_phamhv_container">
+          <div class="sphv_title">
+            <i class="fas fa-chevron-left sphv_arrow"></i>
+            <p class="upper">sản phẩm học viên</p>
+            <i class="fas fa-chevron-right sphv_arrow"></i>
+          </div>
+          <div class="sphv_ex">
+            <a
+              class="sphv_box"
+              href="https://long25vn.github.io/loveletterfinal/letter.html"
+            >
+              <img
+                src="https://techmaster.vn/resources/image/vintage.jpg"
+                alt="vintage"
+              />
+              <div class="sphv_detail_container">
+                <p class="box_title box_margin">Lá thư tình đầu tiên</p>
+                <p class="sphv_detail">
+                  Học viên Nguyễn Thành Long - Tốt nghiệp khóa Web Front-end và
+                  Golang Web
+                </p>
+              </div>
+            </a>
+            <a class="sphv_box" href="https://botuongda.github.io/bakery/">
+              <img
+                src="https://techmaster.vn/resources/image/Ban_banh_my.jpg"
+                alt="ban banh my"
+              />
+              <div class="sphv_detail_container">
+                <p class="box_title box_margin">Website Tiêm bánh mỳ</p>
+                <p class="sphv_detail">
+                  Học viên tốt nghiệp khóa Web Front sau 3 tháng
+                </p>
+              </div>
+            </a>
+            <a
+              class="sphv_box"
+              href="https://hieudo212.github.io/Project%202/home.html"
+            >
+              <img
+                src="https://techmaster.vn/resources/image/min.jpg"
+                alt="min"
+              />
+              <div class="sphv_detail_container">
+                <p class="box_title box_margin">
+                  Website Thiết kế và thi công nội thất
+                </p>
+                <p class="sphv_detail">
+                  Học viên Đỗ Hoàng Hiếu - Tốt nghiệp khóa Web Front sau 2 tháng
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="video_container">
+          <iframe
+            width="1220"
+            height="700"
+            src="https://www.youtube.com/embed/7Q3-R3d_-f4"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
       <!-- mainbody -->
+      <!-- footer -->
+      <div class="footer">
+        <div class="footer_container">
+          <div class="footer_box">
+            <p class="footer_box_title">Chủ sở hữu website</p>
+            <ul class="footer_box_content">
+              <li><a href="#">Công ty TNHH TechMaster Vietnam Ltd</a></li>
+              <li>Số ĐKDN: 0105392153</li>
+              <li>Ngày cấp: 4-7-2011</li>
+              <li>Nơi cấp: Sở kế hoạch - đầu tư Hà Nội</li>
+              <li>Người đại diện pháp luật: Lê Minh Thu</li>
+              <li>Phụ trách nội dung: Trịnh Minh Cường</li>
+            </ul>
+          </div>
+          <div class="footer_box">
+            <p class="footer_box_title">Giới thiệu</p>
+            <ul class="footer_box_content">
+              <li>
+                <a href="https://techmaster.vn/trungtam/trung-tam"
+                  >Học viện CNTT Techmaster</a
+                >
+              </li>
+              <li>
+                <a href="https://techmaster.vn/trungtam/giang-vien"
+                  >Giảng viên</a
+                >
+              </li>
+              <li>
+                <a href="https://techmaster.vn/trungtam/quy-dinh-chung"
+                  >Quy định</a
+                >
+              </li>
+              <li>
+                <a href="https://techmaster.vn/trungtam/huong-dan-mua-khoa-hoc"
+                  >Hướng dẫn mua khóa học</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://techmaster.vn/trungtam/uu-dai-va-hoan-tra-hoc-phi"
+                  >Ưu đãi và hoàn trả học phí</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://techmaster.vn/trungtam/bao-ve-thong-tin-khach-hang"
+                  >Bảo vệ thông tin khách hàng</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer_box">
+            <p class="footer_box_title">Tư vấn tuyển sinh</p>
+            <ul class="footer_box_content">
+              <li>Tư vấn viên :</li>
+              <li><a href="#">1. Nguyễn Thanh Hương - 0382416368</a></li>
+              <li><a href="#">huong@techmaster.vn</a></li>
+              <li><a href="#">2. Phạm Mẫn - 0963023185</a></li>
+              <li><a href="#">manpham@techmaster.vn</a></li>
+              <li><a href="#">Tư vấn đào tạo doanh nghiệp: 090 220 9011</a></li>
+              <li><a href="#">cuong@techmaster.vn</a></li>
+            </ul>
+          </div>
+          <div class="footer_box">
+            <p class="footer_box_title contact_box_margin">Địa chỉ</p>
+            <ul class="footer_box_contact footer_contact">
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/48+T%E1%BB%91+H%E1%BB%AFu,+Trung+V%C4%83n,+T%E1%BB%AB+Li%C3%AAm,+H%C3%A0+N%E1%BB%99i/@20.9981209,105.7921159,17z/data=!3m1!4b1!4m5!3m4!1s0x3135acba8ad197a5:0xa55e51322131e722!8m2!3d20.998029!4d105.7946391"
+                  target="blank"
+                >
+                  Cơ sở Tố Hữu: Tầng 12A, tòa nhà Viwaseen Tower, số 48, Tố Hữu,
+                  Lê Văn Lương kéo dài, Hà Nội
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/4+P.+Nguy%E1%BB%85n+%C4%90%C3%ACnh+Chi%E1%BB%83u,+L%C3%AA+%C4%90%E1%BA%A1i+H%C3%A0nh,+Hai+B%C3%A0+Tr%C6%B0ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.0144091,105.8447957,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ab8dceb27d71:0x51c7c3750694b6a0!8m2!3d21.0144091!4d105.8469844"
+                  target="blank"
+                  >Cơ sở Nguyễn Đình Chiểu: 14 ngõ 4, Nguyễn Đình Chiểu, Quận
+                  Hai Bà Trưng, Hà Nội</a
+                >
+              </li>
+            </ul>
+            <ul class="footer_contact_icon footer_box_contact">
+              <li>
+                <a
+                  href="https://www.facebook.com/techmastervn/?fref=ts"
+                  target="blank"
+                  ><i class="fab fa-facebook-square fa-2x"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCp8QtOj7_yvC7YjzoW46Q3A"
+                  target="blank"
+                  ><i class="fab fa-youtube-square fa-2x"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://github.com/arrowjs" target="blank">
+                  <i class="fab fa-github-square fa-2x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
     </div>
     <!-- page -->
   </body>

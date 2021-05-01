@@ -51,7 +51,7 @@ Thanh dieu huong
 .navigator_menu li {
   text-transform: uppercase;
   color: white;
-  margin: 0px 12.5px;
+  margin: 0px 13px;
   font-weight: 500;
   font-size: 95%;
 }
@@ -69,9 +69,13 @@ Main
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #464646;
 }
 
-/*                        header                      */
+/*                    
+  lo trinh          
+    
+*/
 
 .lo_trinh_top {
   display: flex;
@@ -106,7 +110,6 @@ Main
   box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
   border-radius: 4px;
   height: 104px;
-  color: #464646;
 }
 .lo_trinh_top_right ul li img {
   width: 103px;
@@ -116,7 +119,7 @@ Main
   float: left;
 }
 .lo_trinh_mid {
-  width: 1220px;
+  width: 1260px;
   height: 180px;
   display: flex;
   flex-direction: row;
@@ -129,8 +132,173 @@ Main
   flex-direction: column;
   align-items: center;
   line-height: 1.3;
-  color: #464646;
+  margin-top: 7px;
 }
 .lo_trinh_mid p {
   margin: 15px 30.5px 0;
+}
+.lo_trinh_bot {
+  height: 1580px;
+  width: 1490px;
+  background-color: #e4f2fd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 80px;
+}
+.bang_lo_trinh_bot {
+  width: 1250px;
+  height: 1392px;
+  display: grid;
+  padding: 0 15px;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+}
+.lo_trinh_bot_detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.hover_fix {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 2px 3px 1px rgb(0 0 0 / 15%);
+}
+
+.lo_trinh_bot_detail img {
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+  max-width: 100%;
+}
+.lo_trinh_bot_detail_p_container {
+  padding: 22.4px;
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+  max-height: 182.4px;
+  line-height: 150%;
+}
+.lo_trinh_bot_detail p {
+  margin-bottom: 10px;
+}
+
+/*
+
+san pham hoc vien 
+
+*/
+
+.san_phamhv_container {
+  padding: 80px 0;
+  width: 1220px;
+  height: 633px;
+}
+.san_phamhv {
+  margin: auto;
+}
+.sphv_title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 57px;
+  font-size: 24px;
+  text-align: center;
+}
+.sphv_title i {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 2px solid #2196f3;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sphv_arrow {
+  font-size: 80%;
+  color: #757575;
+}
+.sphv_ex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sphv_box {
+  width: 386px;
+  display: flex;
+  flex-direction: column;
+}
+.sphv_box img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 18%);
+}
+.sphv_detail_container {
+  padding: 22.4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 18%);
+}
+/*
+
+video 
+
+*/
+
+.video_container {
+  height: 860;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4f2fd;
+}
+.video_container iframe {
+  padding: 80px;
+}
+/*
+
+footer 
+
+*/
+.footer {
+  width: 100%;
+  background-color: #464646;
+  display: flex;
+  justify-content: center;
+}
+.footer_container {
+  padding: 46px 58px 51px;
+  width: 90%;
+  height: 383px;
+  display: flex;
+  justify-content: center;
+}
+.footer_box {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+.footer_box_title {
+  font-size: 18px;
+  color: white;
+  margin-bottom: -1px;
+}
+.footer_box_content li {
+  margin: 13.5px 0;
+}
+.footer_contact_icon {
+  display: flex;
+  margin-top: 3px;
+}
+.footer_contact_icon li {
+  display: flex;
+  align-items: flex-start;
+}
+.footer_contact_icon i {
+  margin: 0 8px 0 16px;
+  font-size: 32px;
 }

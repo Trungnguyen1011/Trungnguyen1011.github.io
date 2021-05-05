@@ -1,0 +1,79 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+#zero {
+  position: absolute;
+  background-color: #26a69a;
+  top: -4px;
+  right: 20px;
+  border-radius: 4.5px;
+  z-index: 1;
+  text-align: center;
+  font-weight: 999;
+  font-size: 12px;
+  padding: 1px 5.5px;
+}
+.lo_trinh_top_right_detail {
+  padding: 10px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lo_trinh_bot_tieude {
+  margin-top: 80px;
+  font-size: 24px;
+  color: #464646;
+  text-align: center;
+}
+.lo_trinh_bot_desc {
+  font-size: 16px;
+  font-weight: 300;
+}
+.chuthich {
+  color: #757575;
+  font-size: 80%;
+  font-weight: 500;
+}
+.chuthich_mid {
+  color: #999999;
+  font-size: 14px;
+  font-weight: 300;
+}
+.upper {
+  text-transform: uppercase;
+}
+.bold {
+  font-weight: 600;
+}
+.time_dao_tao {
+  color: #757575;
+  margin-bottom: -10px;
+  opacity: 97%;
+}
+.box_title {
+  color: #464646;
+  font-size: 18px;
+}
+.sphv_detail {
+  font-size: 14px;
+  color: #5e5e5e;
+  line-height: 1.1;
+  font-weight: 300;
+}
+.footer_box_content {
+  font-size: 14px;
+  color: #919294;
+}
+.footer_box_contact {
+  font-size: 14px;
+  color: #919294;
+}
+.footer_contact {
+  line-height: 2.5;
+}
+.contact_box_margin {
+  margin-bottom: 5px;
+}

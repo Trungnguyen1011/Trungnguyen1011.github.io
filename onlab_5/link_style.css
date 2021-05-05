@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  margin-top: 7px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.navigator_menu li a:hover {
+  color: #c4c4c4;
+}
+.hover_fix:hover {
+  box-shadow: 0 3px 5px 3px rgb(0 0 0 / 10%);
+}
+.sphv_title i:hover {
+  cursor: pointer;
+}
+.footer_box_content a:hover {
+  text-decoration: underline;
+}
+.footer_box_contact a:hover {
+  text-decoration: underline;
+}

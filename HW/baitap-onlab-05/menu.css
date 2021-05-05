@@ -13,7 +13,7 @@ a:hover {
 }
 .menu_l1 {
   position: absolute;
-  left: 2%;
+  left: 1%;
   width: 210px;
   height: 100%;
   z-index: 2;
@@ -22,7 +22,6 @@ a:hover {
   font-family: "Roboto", sans-serif;
   background-color: white;
   border: 1px 0 1px 0 solid #757575;
-  padding: 5px 0;
   text-align: left;
   line-height: 2;
   padding: 8px 0 8px 4px;
@@ -33,7 +32,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   text-transform: capitalize;
-  padding: 1px 8px;
+  padding: 1px 4px;
 }
 .menu_l1 li:hover {
   background-color: #eceff1;
@@ -107,7 +106,6 @@ a {
   font-size: 13px;
   font-family: "Roboto", sans-serif;
   background-color: white;
-  padding: 5px 0;
   text-align: left;
   line-height: 2;
   padding: 8px 0 8px;

@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: auto;
+  margin-top: 30px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  width: 600px;
+  height: 600px;
+}
+
+.container img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  object-fit: cover;
+  transition: transform 1s;
+}
+.container img:hover {
+  transform: scale(1.2);
+}

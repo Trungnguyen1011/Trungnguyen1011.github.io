@@ -9,6 +9,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   background-image: url("img/BG.jpeg");
+  font-family: "Roboto", sans-serif;
 }
 #container {
   display: grid;
@@ -45,6 +46,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: brown;
 }
 
 a:hover {
@@ -59,37 +61,43 @@ a:hover {
   background-color: rgb(245, 245, 245);
   box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
 }
-.product p {
+.p_tag {
   text-align: center;
   font-size: 16px;
-  margin: 15px 0;
-  padding: 0 5px;
-  transition: outline 1s;
+  width: 100%;
+  margin: 10px 0 35px;
+  padding: 5px;
+  transition: color 1s, background-color 2s, border-radius 2s;
 }
-.product a:hover .icon {
+.p_tag:hover {
+  color: rgb(117, 14, 0);
+  background-color: rgba(0, 255, 255, 0.555);
+  border-radius: 4px;
+  padding: 5px;
+  font-weight: 700;
+}
+.second_link:hover .more {
   display: block;
 }
 
-.product p:hover {
-  outline: px dotted rgba(241, 36, 0, 0.8);
-}
-@keyframe ptag {
-}
 header {
   background-color: aliceblue;
   width: 100%;
   padding: 10px 20px;
   align-self: flex-start;
 }
-.icon {
+.more {
   display: none;
   position: absolute;
   font-size: 16px;
-  opacity: 50%;
+  opacity: 70%;
   color: black;
-  bottom: 0;
+  bottom: 10px;
   animation: hover 1s infinite;
+  text-align: center;
+  line-height: 1;
 }
+
 @keyframes hover {
   0% {
     transform: translate(0, -4px);

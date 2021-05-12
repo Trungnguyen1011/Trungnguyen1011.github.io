@@ -6,30 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="//db.onlinewebfonts.com/c/0b51833ff62e4af8acb5fd3e2bf59e97?family=SF+Pro+Display"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css.css"
+    />
   </head>
   <body>
     <div id="container">
-      <div class="logo">
-        <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" />
-      </div>
-      <div class="login_box">
-        <form action="#">
-          <input
-            id="username"
-            type="text"
-            name="username"
-            placeholder="Email hoặc số điện thoại"
+      <div class="center">
+        <div class="logo">
+          <img
+            src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
+            height="100px"
+            width="300px"
           />
-          <br />
-          <input
-            id="password"
-            type="password"
-            name="password"
-            placeholder="Mật khẩu"
-          />
-          <br />
-          <button type="submit">Đăng nhập</button>
-        </form>
+          <p>
+            Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống
+            của bạn.
+          </p>
+        </div>
+        <div class="right_side">
+          <div class="login_box">
+            <form action="#" method="POST">
+              <div class="input_box">
+                <input
+                  id="username"
+                  type="text"
+                  name="username"
+                  placeholder="Email hoặc số điện thoại"
+                />
+              </div>
+              <br />
+              <div class="input_box">
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  placeholder="Mật khẩu"
+                />
+              </div>
+
+              <br />
+              <button type="submit" class="buttons">
+                <p class="login">Đăng nhập</p>
+              </button>
+            </form>
+            <a class="qmk" href="#">Quên mật khẩu?</a>
+            <hr class="slash" />
+            <a href="#" class="signup"><p>Tạo tài khoản mới</p></a>
+          </div>
+          <p class="page">
+            <a href="#">Tạo trang</a> dành cho người nổi tiếng, nhãn hiệu hoặc
+            doanh nghiệp
+          </p>
+        </div>
       </div>
     </div>
   </body>

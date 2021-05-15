@@ -20,7 +20,7 @@ li {
 body {
   background-image: url(img/1748255.jpg);
   background-repeat: repeat-y;
-  background-size: 100%;
+  background-size: 125%;
 }
 button:hover {
   cursor: pointer;

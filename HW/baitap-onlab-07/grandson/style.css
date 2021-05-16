@@ -12,6 +12,7 @@ header {
   display: flex;
   color: #ffffff;
   flex-direction: row-reverse;
+  white-space: nowrap;
 }
 .submenu li {
   padding: 10px;

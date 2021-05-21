@@ -128,9 +128,8 @@ public class Formula {
                     if (N % 2 == 1) { /* điều kiện 2 nếu N là số lẻ */
                         for (u = (N + 1) - i; u > 0; u--) {
                             /*
-                             * Vẫn tiếp tục vẽ "*" ở giá trị đầu và cuối đổi u = (N+1) - i trong đó "- i"
-                             * bởi lúc này i càng tăng thì số khoảng trắng càng giảm, u = (N + 1) vì lúc này
-                             * i = m + 1 . (N + 1) - i <=> (m + n + 1 ) - m -1 = n, số dòng cạnh dưới.
+                             * Vẫn tiếp tục vẽ "*" ở giá trị đầu và cuối, đổi u = (N + 1) - i vì lúc này i =
+                             * m + 1 . (N + 1) - i <=> (m + n + 1 ) - m -1 = n, số dòng cạnh dưới.
                              */
                             if (u == (N + 1) - i || u == 1) {
                                 System.out.print("* ");

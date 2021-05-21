@@ -41,18 +41,24 @@ public class HomeWork {
         float weight = 80.0f;
         System.out.println("Câu số 5: Đánh giá thể trạng qua chỉ số BMI: ");
         System.out.println(
-                "Thể trạng của người có cân nặng " + weight + "kg" + " và chiều cao là " + height + "m được cho là ");
+                "Thể trạng của người có cân nặng " + weight + "kg" + " và chiều cao là " + height + "m được cho là: ");
         formula.bmiRating(height, weight);
 
-        int N = 8;
+        int N = 5;
         System.out.println("Câu số 6: Vẽ hình tam giác sao với chiều cao bằng số nguyên dương N = " + N);
         formula.triangle(N);
         System.out.println("");
 
-        int M = 8;
+        int M = 7;
         System.out.println("Câu số 7: Vẽ hình tam giác rỗng số nguyên dương N = " + M);
         formula.hollowTriangle(M);
+        System.out.println("");
 
+        int rectHeight = 4;
+        int rectWidth = 8;
+        System.out.println("Câu số 8: Hình chữ nhật với chiều rộng là " + rectWidth + " và chiều cao là " + rectHeight
+                + " sẽ trông như sau:");
+        formula.rectangle(rectHeight, rectWidth);
     }
 
 }

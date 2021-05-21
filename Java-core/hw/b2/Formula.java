@@ -2,7 +2,7 @@
 public class Formula {
     public float average(int[] array) {
         float sum = 0f;
-        for (int a = 0; a < array.length; a++) {
+        for (int a = 1; a <= array.length; a++) {
             sum += array[a];
         }
         return sum / array.length;
@@ -58,13 +58,13 @@ public class Formula {
             if (bmi >= 30.0f) {
                 System.out.println("Rất nguy hiểm");
             } else {
-                System.out.println("quá cân");
+                System.out.println("Quá cân");
             }
         } else {
             if (bmi >= 18.5) {
-                System.out.println("bình thường");
+                System.out.println("Bình thường");
             } else {
-                System.out.println("nhẹ cân");
+                System.out.println("Nhẹ cân");
             }
 
         }
@@ -155,6 +155,36 @@ public class Formula {
 
             }
         }
+    }
+
+    public void rectangle(int h, int w) {
+        int i;
+        int u;
+        if (h > 3 && h < 9 && w > 3 && w < 9) { /* điều kiện để 3 < A, B < 9 */
+            for (i = 1; i <= h; i++) { /* xuống dòng theo chiều cao h */
+                System.out.println("");
+                if (i == 1 || i == h) { /*
+                                         * điều kiện 1 nếu là dòng đầu hoặc dòng cuối sẽ lấp đầy sao theo giá trị chiều
+                                         * rộng
+                                         */
+                    for (u = 1; u <= w; u++) {
+                        System.out.print("* ");
+                    }
+                } else {
+                    for (u = 1; u <= w; u++) {
+                        if (u == 1 || u == w) { /*
+                                                 * điều kiện 2 nếu không phải dòng đầu và cuối chỉ điền sao vào giá trị
+                                                 * đầu và cuối của chiều rộng, còn lại điền khoảng trắng " "
+                                                 */
+                            System.out.print("* ");
+                        } else {
+                            System.out.print("  ");
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
 }

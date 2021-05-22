@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.regex.*;
+import java.util.ArrayList;
 
 public class Logic {
 
@@ -13,6 +14,7 @@ public class Logic {
             Float height = input.nextFloat();
 
             float bmiRating = (weight / (height * height));
+            System.out.println("Chỉ số BMI của bạn là: " + bmiRating);
 
             if (height.equals("q") || weight.equals("q")) {
                 break;
@@ -37,8 +39,7 @@ public class Logic {
         Scanner input = new Scanner(System.in);
         System.out.println("Hãy nhập email của bạn vào đây: ");
         String email = input.nextLine();
-        String mailfrom = ("@|mail.");
-        Pattern mail = Pattern.compile(mailfrom);
+        Pattern mail = Pattern.compile("\\w+@\\w+[.]\\w+");
         Matcher matcher = mail.matcher(email);
         boolean matchFound = matcher.find();
         if (email != "q") {
@@ -83,6 +84,68 @@ public class Logic {
         } else {
             System.out.println("Số này lớn hơn 100.");
         }
-        input.close();
+    }
+
+    public void censorBadWords() {
+        Scanner input = new Scanner(System.in);
+        String[] badWords = { "fuck", "sex", "rape", "shit", "bitch", "damn" };
+        String[] itsGoodNow = { "f*ck", "s*x", "r**e", "sh*t", "b*tch", "d*mn" };
+        String para = input.nextLine();
+        String[] censored = new String[badWords.length];
+
+        if (true) {
+            String replaceString = para.replace(badWords[0], itsGoodNow[0]);
+            censored[0] = replaceString;
+            for (int j = 1; j < badWords.length; j++) {
+                String replaceBwords = censored[j - 1].replace(badWords[j], itsGoodNow[j]);
+                censored[j] = replaceBwords;
+                if (j == badWords.length - 1) {
+                    System.out.println(censored[j]);
+                }
+            }
+
+        }
+    }
+
+    public void palindrome() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Chuỗi bạn muốn nhập có bao nhiêu từ: ");
+        String slength = scanner.nextLine();
+        int length = Integer.parseInt(slength);
+        String[] array = new String[length];
+        System.out.println("Nhập từ bạn muốn: ");
+        for (int i = 0; i < length; i++) {
+            array[i] = scanner.nextLine();
+        }
+        System.out.println("Chuỗi của bạn là: ");
+
+        for (int i = 0; i < length; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        for (int i = 0; i < length; i++) {
+            Pattern word = Pattern.compile("^(\\w)\\w+\\1$");
+            Matcher matcher = word.matcher(array[i]);
+            boolean matchFound = matcher.find();
+
+            /*
+             * if (matchFound == true) { boolean balance = true; } else { boolean balance =
+             * false;
+             * 
+             * }
+             */
+            if (matchFound == false) {
+                System.out.println("Nó không có các phần tử cân xứng.");
+                break;
+            } else if (i == length - 1 && matchFound == true) {
+                System.out.println("Nó có các phần tử cân xứng.");
+            } else {
+                continue;
+            }
+
+        }
+    }
+
+    public void space() {
+        System.out.println();
     }
 }

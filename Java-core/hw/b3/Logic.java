@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.regex.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Logic {
 
@@ -16,9 +17,7 @@ public class Logic {
             float bmiRating = (weight / (height * height));
             System.out.println("Chỉ số BMI của bạn là: " + bmiRating);
 
-            if (height.equals("q") || weight.equals("q")) {
-                break;
-            } else if (bmiRating <= 24.9) {
+            if (bmiRating <= 24.9) {
                 if (bmiRating < 18.5) {
                     System.out.println("Bạn đang hơi nhẹ cân, cần ăn uống đầy đủ hơn cũng như sinh hoạt điều độ");
                 } else {
@@ -86,64 +85,96 @@ public class Logic {
         }
     }
 
+    /*
+     * public void censorBadWordss() { // the confusing one Scanner input = new
+     * Scanner(System.in); String[] badWords = { "fuck", "sex", "rape", "shit",
+     * "bitch", "damn" }; String[] itsGoodNow = { "f*ck", "s*x", "r**e", "sh*t",
+     * "b*tch", "d*mn" }; String para = input.nextLine(); String[] censored = new
+     * String[badWords.length];
+     * 
+     * String replaceString = para.replace(badWords[0], itsGoodNow[0]); censored[0]
+     * = replaceString; for (int j = 1; j < badWords.length; j++) { String
+     * replaceBwords = censored[j - 1].replace(badWords[j], itsGoodNow[j]);
+     * censored[j] = replaceBwords; if (j == badWords.length - 1) {
+     * System.out.println(censored[j]); } }
+     * 
+     * }
+     */
+
     public void censorBadWords() {
         Scanner input = new Scanner(System.in);
         String[] badWords = { "fuck", "sex", "rape", "shit", "bitch", "damn" };
         String[] itsGoodNow = { "f*ck", "s*x", "r**e", "sh*t", "b*tch", "d*mn" };
         String para = input.nextLine();
-        String[] censored = new String[badWords.length];
-
-        if (true) {
-            String replaceString = para.replace(badWords[0], itsGoodNow[0]);
-            censored[0] = replaceString;
-            for (int j = 1; j < badWords.length; j++) {
-                String replaceBwords = censored[j - 1].replace(badWords[j], itsGoodNow[j]);
-                censored[j] = replaceBwords;
-                if (j == badWords.length - 1) {
-                    System.out.println(censored[j]);
-                }
+        for (int i = 0; i < badWords.length; i++) {
+            String replaceString = para.replace(badWords[i], itsGoodNow[i]);
+            para = replaceString;
+            if (i == badWords.length - 1) {
+                System.out.println(para);
             }
-
         }
+
     }
 
     public void palindrome() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Chuỗi bạn muốn nhập có bao nhiêu từ: ");
-        String slength = scanner.nextLine();
-        int length = Integer.parseInt(slength);
-        String[] array = new String[length];
-        System.out.println("Nhập từ bạn muốn: ");
-        for (int i = 0; i < length; i++) {
-            array[i] = scanner.nextLine();
+
+        ArrayList<String> arrayList = new ArrayList<String>();
+        System.out.println("Nhập những từ bạn muốn, nhấn q để kết thúc nhập từ: ");
+        int i = 0;
+        while (true) {
+            arrayList.add(scanner.nextLine());
+            String quit = arrayList.get(i);
+            if (quit.equals("q")) {
+                arrayList.remove(i);
+                break;
+            }
+            i++;
+
         }
         System.out.println("Chuỗi của bạn là: ");
-
-        for (int i = 0; i < length; i++) {
-            System.out.print(array[i] + ", ");
+        for (int j = 0; j < arrayList.size(); j++) {
+            System.out.print(arrayList.get(j) + ", ");
         }
-        for (int i = 0; i < length; i++) {
-            Pattern word = Pattern.compile("^(\\w)\\w+\\1$");
-            Matcher matcher = word.matcher(array[i]);
-            boolean matchFound = matcher.find();
 
-            /*
-             * if (matchFound == true) { boolean balance = true; } else { boolean balance =
-             * false;
-             * 
-             * }
-             */
-            if (matchFound == false) {
-                System.out.println("Nó không có các phần tử cân xứng.");
-                break;
-            } else if (i == length - 1 && matchFound == true) {
-                System.out.println("Nó có các phần tử cân xứng.");
-            } else {
-                continue;
+        for (int j = 0; j < arrayList.size(); j++) {
+            String original = arrayList.get(j);
+            String reverse = "";
+            int k = original.length();
+            for (int n = k - 1; n >= 0; n--) {
+                reverse = reverse + original.charAt(n);
             }
-
+            if (original.equals(reverse)) {
+                if (j == arrayList.size() - 1) {
+                    System.out.println("Nó có các kí tự cân xứng");
+                }
+            } else {
+                System.out.println("Nó không có các kí tự cân xứng");
+                break;
+            }
         }
     }
+
+    /*
+     * public void misread() { Scanner scanner = new Scanner(System.in);
+     * System.out.print("Chuỗi bạn muốn nhập có bao nhiêu từ: "); String slength =
+     * scanner.nextLine(); int length = Integer.parseInt(slength); String[] array =
+     * new String[length]; System.out.println("Nhập từ bạn muốn: "); for (int i = 0;
+     * i < length; i++) { array[i] = scanner.nextLine(); }
+     * System.out.println("Chuỗi của bạn là: ");
+     * 
+     * for (int i = 0; i < length; i++) { System.out.print(array[i] + ", "); } for
+     * (int i = 0; i < length; i++) { Pattern word =
+     * Pattern.compile("^(\\w)\\w+\\1$"); Matcher matcher = word.matcher(array[i]);
+     * boolean matchFound = matcher.find();
+     * 
+     * if (matchFound == false) {
+     * System.out.println("Nó không có các phần tử cân xứng."); break; } else if (i
+     * == length - 1 && matchFound == true) {
+     * System.out.println("Nó có các phần tử cân xứng."); } else { continue; }
+     * 
+     * } }
+     */
 
     public void space() {
         System.out.println();

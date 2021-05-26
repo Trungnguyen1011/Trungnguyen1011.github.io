@@ -1,4 +1,3 @@
-public enum position {
-Private
-
+public enum Position {
+    GOALKEEPER, DEFENDER, FORWARD, MIDFIELDER;
 }

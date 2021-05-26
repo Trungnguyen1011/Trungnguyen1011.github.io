@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
     @Override
     public String toString() {
-        return "Player [name=" + name + ", no=" + no + ", position=" + position + "]";
+        return "Player [name= " + name + ", no= " + no + ", position= " + position + "]";
     }
 
     private String name;
@@ -15,4 +18,5 @@ public class Player {
         this.no = no;
         this.position = position;
     }
+
 }

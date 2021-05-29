@@ -13,6 +13,7 @@ public class Team {
     private String stadium;
     private String coach;
     private int established_year;
+    private long budget;
 
     public Team(String name, String stadium, String coach, int established_year) {
         this.name = name;
@@ -140,5 +141,22 @@ public class Team {
             System.out.println(list.get(i));
         }
         System.out.println("");
+    }
+
+    // Getter function dùng để truy xuất đến các private properties
+    // Nhiều bạn thắc mắc tại sao cần phải có getter method mà không truy xuất trực
+    // tiếp
+    public long getBudget() {
+        // Viết logic để kiểm tra quyền truy xuất
+        /*
+         * if (role == "coach" || role == "president") { return budget; } else { throw
+         * new Exception("Bạn không được phép xem budget"); } Encapsulation là đóng gói.
+         */
+        return budget;
+    }
+
+    // Setter dùng để gán giá trị cho property
+    public void setBudget(long budget) {
+        this.budget = budget;
     }
 }

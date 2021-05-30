@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import java.util.Scanner;
 
 public class StringUtil {
@@ -23,10 +24,10 @@ public class StringUtil {
      */
     public String reverse(String str) {
         String reverse = "";
-        for ( int i = str.length() - 1 ; i >= 0 ; i--) {
+        for (int i = str.length() - 1; i >= 0; i--) {
             reverse = reverse + str.charAt(i);
         }
-       
+
         return reverse;
     }
 
@@ -44,18 +45,19 @@ public class StringUtil {
      * Upper case ký tự đầu tiên của từ
      */
     public String camelCase(String input) {
-        String camelCase = ""; 
+        String camelCase = "";
         for (int i = 0; i < input.length(); i++) {
-            if ( i == 0) {
-               char k =  input.charAt(i);
-                camelCase = camelCase + Character.toUpperCase(k);
-
-            } else if (input.charAt(i -1) == ' ')  {
+            if (i == 0) {
                 char k = input.charAt(i);
                 camelCase = camelCase + Character.toUpperCase(k);
 
-            } else { 
-                camelCase = camelCase + input.charAt(i);}
+            } else if (input.charAt(i - 1) == ' ') {
+                char k = input.charAt(i);
+                camelCase = camelCase + Character.toUpperCase(k);
+
+            } else {
+                camelCase = camelCase + input.charAt(i);
+            }
 
         }
 
@@ -71,14 +73,14 @@ public class StringUtil {
         String longestWord = "";
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) != ' ') {
-                wordLength++; 
-            } else if (wordLength > longestOne) { longestOne = wordLength;
-                longestWord = input.substring(i - longestOne , i);
+                wordLength++;
+            } else if (wordLength > longestOne) {
+                longestOne = wordLength;
+                longestWord = input.substring(i - longestOne, i);
                 wordLength = 0;
-                } else {
-                    wordLength = 0;
-                }
-            
+            } else {
+                wordLength = 0;
+            }
 
         }
 
@@ -90,21 +92,21 @@ public class StringUtil {
      */
 
     /*
-     * "Một con mèo, hai con chó, chó đuổi mèo" 
-     * Một: 1 
-     * con: 2 
-     * mèo: 2 
-     * hai: 1 
-     * chó: 2
+     * "Một con mèo, hai con chó, chó đuổi mèo" Một: 1 con: 2 mèo: 2 hai: 1 chó: 2
      * đuổi: 1
      */
+
     public Map<String, Integer> countWords(String input) {
-        String [] str = input.split(" ");
+        input = input.replaceAll(",", "");
+        String[] str = input.split(" ");
         Map<String, Integer> map = new HashMap<String, Integer>();
         int count = 0;
-        for (int i = 0; i < str.length; i++ ) {
+        for (int i = 0; i < str.length; i++) {
             for (int j = 0; j < str.length; j++) {
-                if (str[i] == str[j]) { count++; }
+                if (str[i].equalsIgnoreCase(str[j])) {
+                    count++;
+
+                }
             }
             map.put(str[i], count);
             count = 0;
@@ -112,4 +114,5 @@ public class StringUtil {
 
         return map;
     }
+
 }

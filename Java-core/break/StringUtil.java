@@ -12,9 +12,20 @@ public class StringUtil {
      */
 
     public boolean isContain(String strA, String strB) {
-        Pattern p = Pattern.compile(strB);
-        Matcher matcher = p.matcher(strA);
-        Boolean result = matcher.find();
+        boolean result = false;
+        int j = 0;
+        for (int i = 0; i < strA.length(); i++) {
+            if (strA.charAt(i) == strB.charAt(j) && j == strB.length() - 1) {
+                result = true;
+                break;
+            } else if (strA.charAt(i) == strB.charAt(j)) {
+                j++;
+            } else {
+                j = 0;
+            }
+
+        }
+
         return result;
 
     }
@@ -36,7 +47,19 @@ public class StringUtil {
      * trí tìm thấy
      */
     public int find(String strA, String strB) {
-        int find = strA.indexOf(strB);
+        int find = -1;
+        int j = 0;
+        for (int i = 0; i < strA.length(); i++) {
+            if (strA.charAt(i) == strB.charAt(j) && j == strB.length() - 1) {
+                find = i - j;
+                break;
+            } else if (strA.charAt(i) == strB.charAt(j)) {
+                j++;
+            } else {
+                j = 0;
+            }
+
+        }
 
         return find;
     }

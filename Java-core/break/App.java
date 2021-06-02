@@ -6,9 +6,9 @@ public class App {
     public static void main(String[] args) {
         StringUtil stringUtil = new StringUtil();
 
-        String strA = "Cuộc đời vẫn đẹp sao";
+        String strA = new String("Cuộc đời vẫn đẹp sao");
 
-        String strB = "đời";
+        String strB = "đẹp";
 
         // if (strA.contains(strB)) {
         // System.out.println("\"" + strA +"\" chứa \"" + strB + "\"");
@@ -24,35 +24,35 @@ public class App {
             System.out.println(strA + " không chứa " + "\"" + strB + "\"");
         }
 
-        System.out.println(" Nhập chuỗi bạn muốn đảo ngược : ");
-        String str = "đảo ngược nè";
-        System.out.println("chuỗi " + "\"" + str + "\"" + " đảo ngược lại là: ");
-        String reverse = stringUtil.reverse(str);
+        System.out.println("Chuỗi bạn muốn đảo ngược : ");
+        String strC = "đảo ngược nè";
+        System.out.println("Chuỗi " + "\"" + strC + "\"" + " đảo ngược lại là: ");
+        String reverse = stringUtil.reverse(strC);
         System.out.println("\"" + reverse + "\"");
 
-        System.out.println(" Nhập chuỗi bạn muốn kiểm tra: ");
-        String strC = "Cuộc đời vẫn đẹp sao";
-        System.out.println(" Nhập phần tử bạn muốn kiểm tra vị trí: ");
-        String strD = "đẹp";
-        int find = stringUtil.find(strC, strD);
-        System.out.println(" Kết quả: ");
+        String strD = "Cuộc đời vẫn đẹp sao";
+        System.out.println("Chuỗi bạn muốn kiểm tra: " + strD);
+        String strE = "đẹp";
+        System.out.println("Nhập phần tử bạn muốn kiểm tra vị trí: " + strE);
+        int find = stringUtil.find(strD, strE);
+        System.out.print("Kết quả: ");
         System.out.println(find);
 
-        System.out.println(" Nhập chuỗi mà bạn muốn in hoa chữ cái đầu của mỗi phần tử: ");
-        String input = "in hoa chữ đầu tiên";
-        System.out.println(input);
-        String camelCase = stringUtil.camelCase(input);
-        System.out.println(" Kết quả là: ");
+        System.out.println("Nhập chuỗi mà bạn muốn in hoa chữ cái đầu của mỗi phần tử: ");
+        String strF = "in hoa chữ đầu tiên";
+        System.out.println(strF);
+        String camelCase = stringUtil.camelCase(strF);
+        System.out.print("Kết quả là: ");
         System.out.println(camelCase);
 
-        String strE = "Không có gì quý hơn độc lập tự do";
-        System.out.println("chu dai nhat cua day " + "\"" + strE + "\"" + " la: ");
-        String longestWord = stringUtil.longestWord(strE);
+        String strG = "Không có gì quý hơn độc lập tự do";
+        System.out.print("Chữ dài nhất của dãy " + "\"" + strG + "\"" + " là: ");
+        String longestWord = stringUtil.longestWord(strG);
         System.out.println("\"" + longestWord + "\"");
 
-        String strF = "Một con mèo, hai con chó, chó đuổi mèo";
-        System.out.println("Số lần xuất hiện của mỗi từ trong đoạn văn là: " + "\"" + strF + "\"" + " la: ");
-        Map<String, Integer> map = stringUtil.countWords(strF);
+        String strH = "Một con mèo, hai con chó, chó đuổi mèo";
+        System.out.println("Số lần xuất hiện của mỗi từ trong đoạn văn " + "\"" + strH + "\"" + " là: ");
+        Map<String, Integer> map = stringUtil.countWords(strH);
         for (String i : map.keySet()) {
             System.out.println("Từ " + i + " có số lần xuất hiện là: " + map.get(i));
 

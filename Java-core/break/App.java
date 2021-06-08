@@ -8,6 +8,7 @@ public class App {
 
         String strA = new String("Cuộc đời vẫn đẹp sao");
 
+        
         String strB = "đẹp";
 
         // if (strA.contains(strB)) {

@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -122,7 +123,7 @@ public class StringUtil {
     public Map<String, Integer> countWords(String input) {
         input = input.replaceAll(",", "");
         String[] str = input.split(" ");
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        Map<String, Integer> map = new LinkedHashMap<String, Integer>();
         int count = 0;
         for (int i = 0; i < str.length; i++) {
             for (int j = 0; j < str.length; j++) {
@@ -137,5 +138,6 @@ public class StringUtil {
 
         return map;
     }
+
 
 }

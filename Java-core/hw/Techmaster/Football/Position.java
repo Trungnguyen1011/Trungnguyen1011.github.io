@@ -1,0 +1,3 @@
+public enum Position {
+    GOALKEEPER, DEFENDER, FORWARDER, MIDFIELDER;
+}

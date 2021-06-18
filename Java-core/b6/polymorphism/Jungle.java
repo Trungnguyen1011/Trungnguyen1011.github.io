@@ -45,7 +45,7 @@ class Dolphin implements Swim {
     @Override
     public void breathUnderWater() {
         System.out.println("Cá heo thở dưới mặt nước");
-    
+
     }
 
     @Override
@@ -86,9 +86,9 @@ public class Jungle {
     }
 
     public void simulate() {
-        for (Swim object : swimAnimals) {
-            object.breathUnderWater();
-            object.swim();
+        for (Swim i : swimAnimals) {
+            i.breathUnderWater();
+            i.swim();
         }
 
         for (Fly object : flyAnimals) {

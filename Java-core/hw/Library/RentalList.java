@@ -1,11 +1,13 @@
 import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 public class RentalList implements Entity {
 
     private Long id;
     private Customer customer;
-    private LocalDateTime orderDate;
+    private LocalDate rentedDate;
+    private LocalDate returnDate;
     private String notes; // Ghi chú khi đặt hàng
     private List<LineItem> items; // chi tiết từng mặt hàng trong đơn hàng
     private Long totalCost = 0L;
@@ -19,22 +21,34 @@ public class RentalList implements Entity {
         return id;
     }
 
-    public RentalList(Customer customer, LocalDateTime orderDate, String notes, List<LineItem> items) {
+    public RentalList(Customer customer, LocalDate rentedDate, LocalDate returnDate, String notes,
+            List<LineItem> items) {
         id = IdGenerator.getNewRenderListId();
-        this.customer = customer;
-        this.orderDate = orderDate;
-        this.notes = notes;
-        this.items = items;
+        setCustomer(customer);
+        setRentedDate(rentedDate);
+        setNotes(notes);
+        setItems(items);
+        setReturnDate(returnDate);
         totalCost = 0L;
         for (LineItem item : items) {
             totalCost += item.getCost();
         }
     }
 
-    @Override
-    public String toString() {
-        return "Rental List [id: " + id + "\n " + customer + "\n items= \n " + items + "\n notes= " + notes
-                + "\n orderDate= " + orderDate + "\n Total Cost= " + getTotalCost() + " usd ]";
+    public LocalDate getRentedDate() {
+        return rentedDate;
+    }
+
+    public void setRentedDate(LocalDate rentedDate) {
+        this.rentedDate = rentedDate;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
     }
 
     public Long getTotalCost() {
@@ -53,14 +67,6 @@ public class RentalList implements Entity {
         this.customer = customer;
     }
 
-    public LocalDateTime getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDateTime orderDate) {
-        this.orderDate = orderDate;
-    }
-
     public String getNotes() {
         return notes;
     }
@@ -75,6 +81,13 @@ public class RentalList implements Entity {
 
     public void setItems(List<LineItem> items) {
         this.items = items;
+    }
+
+    @Override
+    public String toString() {
+        return "Rental List [id: " + id + "\n " + customer + "\n items= \n " + items + "\n notes= " + notes
+                + "\n rentedDate= " + rentedDate + "\n returnDate= " + returnDate + "\n Total Cost= " + getTotalCost()
+                + " usd ]";
     }
 
 }

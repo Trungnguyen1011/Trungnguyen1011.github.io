@@ -7,6 +7,11 @@ public class Order implements Entity{
   private LocalDateTime orderDate;
   private String notes; //Ghi chú khi đặt hàng
   private List<LineItem> items; //chi tiết từng mặt hàng trong đơn hàng
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
   @Override
   public Long getId() {
     return id;
@@ -21,8 +26,8 @@ public class Order implements Entity{
   }
   @Override
   public String toString() {
-    return "Order id: " + id + "\n" + customer  + "\n items= " + items + "\n notes= " + notes + "\n orderDate= "
-        + orderDate;
+    return ("Order id: " + id + "\n" + customer  + "\n items= " + items.toString().replace(",", "") + "\n notes= " + notes + "\n orderDate= "
+        + orderDate);
   }
 
   public Customer getCustomer() {

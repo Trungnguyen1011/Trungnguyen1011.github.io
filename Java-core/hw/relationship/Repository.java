@@ -18,15 +18,18 @@ public class Repository<T extends Entity> {
     collections.add(t);
   }
 
-  public void update(T t) {
+  public void update(T t, Long id) {
     for (int i = 0; i < collections.size(); i++) {
-      if (collections.get(i).getId().equals(t.getId())) {
+      if (collections.get(i).getId().equals(id)) {
+        collections.remove(collections.indexOf(t));
         collections.set(i, t);
+        t.setId(id);
+        break;
       }
     }
   }
 
-  public void deleteByID(Long id) {
+  public void deleteProductByID(Long id) {
     Iterator<T> itr = collections.iterator();
     while (itr.hasNext()) {
       T item = itr.next();
@@ -35,4 +38,5 @@ public class Repository<T extends Entity> {
       }
     }
   }
+
 }

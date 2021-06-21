@@ -16,6 +16,10 @@ public class Customer implements Entity {
     setAddress(address);
   }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
+
   public Long getId() { // normal get id
     return id;
   }

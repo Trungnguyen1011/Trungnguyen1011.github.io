@@ -6,23 +6,17 @@ public class Book implements Entity {
     private Long id;
     public String bookName;
     public String publishedYear;
-    public List<Author> author;
+    public List<Author> authors;
     public String publisher;
     public String paperBack;
 
-    public Book(String bookName, String publishedYear, List<Author> author, String publisher, String paperBack) {
+    public Book(String bookName, String publishedYear, List<Author> authors, String publisher, String paperBack) {
         id = IdGenerator.getNewbookId();
         this.bookName = bookName;
         this.publishedYear = publishedYear;
-        this.author = author;
+        this.authors = authors;
         this.publisher = publisher;
         this.paperBack = paperBack;
-    }
-
-    @Override
-    public String toString() {
-        return "Book [id= " + id + "\n" + "Author= " + author + "\n bookName= " + bookName +  "\n paperBack= " + paperBack
-                + "\n publishedYear= " + publishedYear + "\n publisher= " + publisher + "]";
     }
 
     public Long getId() {
@@ -32,4 +26,15 @@ public class Book implements Entity {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        String sortedAuthors = "";
+        for (Author author : authors) {
+            sortedAuthors += author + "\n ";
+        }
+        return "Book [id= " + id + "\n" + " Author= \n " + sortedAuthors + "bookName= " + bookName + "\n paperBack= "
+                + paperBack + "\n publishedYear= " + publishedYear + "\n publisher= " + publisher + "]";
+    }
+
 }

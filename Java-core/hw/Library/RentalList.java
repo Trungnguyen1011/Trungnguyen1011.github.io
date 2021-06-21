@@ -1,7 +1,7 @@
-import java.time.LocalDateTime;
 import java.time.LocalDate;
 import java.util.List;
 
+// Phiếu thuê (Mã phiếu, độc giả, ngày thuê, ngày hẹn trả, line item)
 public class RentalList implements Entity {
 
     private Long id;
@@ -85,7 +85,11 @@ public class RentalList implements Entity {
 
     @Override
     public String toString() {
-        return "Rental List [id: " + id + "\n " + customer + "\n items= \n " + items + "\n notes= " + notes
+        String sortedItem = "  ";
+        for (LineItem item : items) {
+            sortedItem += item + "\n";
+        }
+        return "Rental List [id: " + id + "\n " + customer + "\n items= \n" + sortedItem + " notes= " + notes
                 + "\n rentedDate= " + rentedDate + "\n returnDate= " + returnDate + "\n Total Cost= " + getTotalCost()
                 + " usd ]";
     }

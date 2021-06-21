@@ -33,7 +33,8 @@ public class LineItem {
 
     @Override
     public String toString() {
-        return book + "\n price=" + price + " usd, rentingTime= " + rentingTime + " days, cost = " + getCost() + " usd]\n";
+        return book + "\n price=" + price + " usd, rentingTime= " + rentingTime + " days, cost = " + getCost()
+                + " usd]\n";
     }
 
 }

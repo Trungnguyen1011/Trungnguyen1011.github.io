@@ -13,12 +13,6 @@ public class Author implements Entity {
         setAddress(address);
     }
 
-    @Override
-    public String toString() {
-        return "Author [id= " + id + ", authorName= " + authorName + ", experience since= " + experience + ", email= "
-                + email + ", address= " + address +  "]";
-    }
-
     public Long getId() {
         return id;
     }
@@ -35,4 +29,9 @@ public class Author implements Entity {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "Author [id= " + id + ", authorName= " + authorName + ", experience since= " + experience + ", email= "
+                + email + ", address= " + address + "]";
+    }
 }

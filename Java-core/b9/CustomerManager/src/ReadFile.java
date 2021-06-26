@@ -21,13 +21,13 @@ public class ReadFile {
 
 
         try(FileReader reader = new FileReader("customer.json")){
-
+            System.out.println(reader.getClass());
             //Read JSON file
             Object obj = parser.parse(reader);
- 
+            System.out.println(obj.getClass());
             JSONArray customerList = (JSONArray) obj;
             //System.out.println(customerList);
-
+            System.out.println(customerList.getClass());
             //Iterate over employee array
             customerList.forEach( cus -> parseCustomerObject( (JSONObject) cus ) );
              

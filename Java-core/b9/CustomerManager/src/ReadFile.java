@@ -21,15 +21,13 @@ public class ReadFile {
 
 
         try(FileReader reader = new FileReader("customer.json")){
-            System.out.println(reader.getClass());
             //Read JSON file
-            Object obj = parser.parse(reader);
-            System.out.println(obj.getClass());
-            JSONArray customerList = (JSONArray) obj;
-            //System.out.println(customerList);
-            System.out.println(customerList.getClass());
+            //  Object obj = parser.parse(reader);
+            System.out.println(parser.parse(reader).getClass());
+            // JSONArray customerList = (JSONArray) parser.parse(reader);
+            //System.out.println(customerList.getClass());
             //Iterate over employee array
-            customerList.forEach( cus -> parseCustomerObject( (JSONObject) cus ) );
+            //customerList.forEach( cus -> parseCustomerObject( (JSONObject) cus ) );
              
         } catch (IOException e) {
             e.printStackTrace();
@@ -52,8 +50,8 @@ public class ReadFile {
 
         String address = (String) jsonObject.get("address");
         
-        System.out.println(id + " - " +first_name+" - " + last_name 
-                        + " - " + email + " - " + mobile + " - " + address);
+      //  System.out.println(id + " - " +first_name+" - " + last_name 
+      //                 + " - " + email + " - " + mobile + " - " + address);
     }
 
 

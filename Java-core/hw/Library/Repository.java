@@ -4,10 +4,14 @@ import java.util.Iterator;
 import java.util.Optional;
 
 public class Repository<T extends Entity> {
+    private boolean login = false;
     protected ArrayList<T> collections = new ArrayList<>();
 
     public List<T> getAll() {
-        return collections;
+        if (login) {return collections;} else {
+            throw new RuntimeException("ban can phai dang nhap truoc da");
+        }
+      
     }
 
     public Optional<T> findById(Long id) {

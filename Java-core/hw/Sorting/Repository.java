@@ -9,7 +9,8 @@ import com.google.gson.reflect.TypeToken;
 public class Repository {
     public List<Student> studentsList;
     public List<Teacher> teachersList;
-    public void getStudentsData() {
+
+    public List<Student> getStudentsData() {
         
 
         try {
@@ -18,29 +19,26 @@ public class Repository {
             }.getType();
             studentsList = new Gson().fromJson(reader, objectType);
             
-            for (Student student : studentsList) {
-                System.out.println(student);
-            }
+            return studentsList;
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } 
-        
+        }
+        return studentsList;
     }
 
-    public void getTeachersData() {
+    public List<Teacher> getTeachersData() {
         try {
             FileReader reader = new FileReader("Teacher.json");
             Type objectType = new TypeToken<List<Teacher>>() {
             }.getType();
             teachersList = new Gson().fromJson(reader, objectType);
-            
-            for (Teacher teacher : teachersList) {
-                System.out.println(teacher);
-            }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } 
+        return teachersList;
     }
+
+
 }

@@ -14,6 +14,9 @@ public class LambaExample {
         numbers.add(2);
         numbers.add(1);
 
+        System.out.println("Danh sách những so chia het cho 5:");
+        numbers.stream().filter(number -> number % 2 == 0).forEach(number -> System.out.println(number));
+        
         //Thông thường chúng ta sử dụng for hoặc foreach để in danh sách
         for (Integer integer : numbers) {
             System.out.println(integer);

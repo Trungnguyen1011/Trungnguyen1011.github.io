@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -73,6 +72,24 @@ public class App {
         listProduct.stream().forEach(
                 product -> totalSale.put(product.getName(), (int) (product.getPrice() * product.getAmountSale())));
         totalSale.forEach((key, value) -> System.out.println("Sản phẩm: " + key + ": Tổng thu: " + value + "vnd"));
+        space();
+        System.out.print("Sản phẩm bán chạy thứ nhất và thứ hai: \n"); 
+        Collections.sort(listProduct, new Comparator<Product>() {
+
+            @Override
+            public int compare(Product o1, Product o2) {
+
+                return o2.getAmountSale() - (o1.getAmountSale());
+            }
+        });
+       
+        for (int i = 0; i < listProduct.size(); i++) {
+            if (i==0) {
+                System.out.println("Sản phẩm bán chạy nhất là: " + listProduct.get(i).getName() + " số lượng đã bán: " + listProduct.get(i).getAmountSale());
+            } else if (i == 1) {
+                System.out.println("Sản phẩm bán chạy thứ hai là: " + listProduct.get(i).getName() + " số lượng đã bán: " + listProduct.get(i).getAmountSale());
+            }
+        }
 
     }
 

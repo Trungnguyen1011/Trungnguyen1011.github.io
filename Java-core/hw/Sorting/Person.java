@@ -1,11 +1,12 @@
 public abstract class Person {
-   protected Long id;
-   protected   String name;
-   protected   String age;
-   protected   String mobile;
-   protected  String address;
-   protected   String email;
-   protected  String variable;
+    protected Long id;
+    protected String name;
+    protected String age;
+    protected String mobile;
+    protected String address;
+    protected String email;
+    protected String variable;
+
     public Person(Long id, String name, String age, String mobile, String address, String email, String variable) {
         setId(id);
         setName(name);
@@ -71,7 +72,5 @@ public abstract class Person {
     public void setVariable(String variable) {
         this.variable = variable;
     }
-
- 
 
 }

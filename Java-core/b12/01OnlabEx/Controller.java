@@ -10,22 +10,28 @@ public class Controller extends Repo {
         while (isContinue) {
             appMenu();
             int choose = input.nextInt();
+            String a = input.nextLine();
             switch (choose) {
                 case 1:
+                subMenu1();
                     int choose1 = input.nextInt();
                     cataFilter(choose1);
                     break;
                 case 2:
+                subMenu2();
                     int choose2 = input.nextInt();
                     brandFilter(choose2);
                     break;
                 case 3:
+                subMenu1();
                     int choose3 = input.nextInt();
                     CataPriceFilter(choose3);
+                    subMenu3();
                     int choose4 = input.nextInt();
                     priceFilter(choose4, theChosenOne);
                     break;
                 case 4:
+                System.out.println("Nhập tên sản phẩm cần tìm");
                     String choose5 = input.nextLine();
                     customFilter(choose5);
                     break;
@@ -53,11 +59,7 @@ public class Controller extends Repo {
     }
 
     public void cataFilter(int choose) {
-            System.out.println("Mời chọn danh mục:");
-        System.out.println("1: Điện Thoại.");
-        System.out.println("2: Laptop.");
-        System.out.println("3: Apple.");
-        System.out.println("4: Phụ kiện.");
+     
         switch (choose) {
             case 1:
                 super.productList.stream().filter(product -> product.getType() == Category.PHONE)
@@ -82,14 +84,7 @@ public class Controller extends Repo {
     }
 
     public void brandFilter(int choose) {
-               System.out.println("Mời chọn hãng:");
-        System.out.println("1: Oppo.");
-        System.out.println("2: Samsung.");
-        System.out.println("3: Apple.");
-        System.out.println("4: Xiaomi.");
-        System.out.println("5: Dell");
-        System.out.println("6: Asus");
-        System.out.println("7: Vivo");
+  
               switch (choose) {
             case 1:
                 super.productList.stream().filter(product -> product.getBrand().equals("OPPO"))
@@ -127,18 +122,8 @@ public class Controller extends Repo {
     }
 
     public void CataPriceFilter(int choose) {
-        System.out.println("Mời chọn danh mục:");
-        System.out.println("1: Điện Thoại.");
-        System.out.println("2: Laptop.");
-        System.out.println("3: Apple.");
-        System.out.println("4: Phụ kiện.");
+     
     
-        System.out.println("Mời chọn mức giá:");
-        System.out.println("1: Dưới 2 triệu");
-        System.out.println("2: Từ 2 - 4 triệu");
-        System.out.println("3: Từ 4 - 7 triệu");
-        System.out.println("4: Từ 7 - 13 triệu");
-        System.out.println("5: Trên 13 triệu");
         switch (choose) {
             case 1:
                 theChosenOne = Category.PHONE.getValue();
@@ -202,9 +187,35 @@ public class Controller extends Repo {
     }
 
     public void customFilter(String keywords) {
-        System.out.println("Nhập tên sản phẩm cần tìm");
+      
         super.productList.stream().filter(product -> (product.getName().toLowerCase()).contains(keywords.toLowerCase()))
                 .forEach(product -> System.out.println(product));
     }
 
+    public void subMenu1() {
+        System.out.println("Mời chọn danh mục:");
+        System.out.println("1: Điện Thoại.");
+        System.out.println("2: Laptop.");
+        System.out.println("3: Apple.");
+        System.out.println("4: Phụ kiện.");
+    }
+    public void subMenu2() {
+        System.out.println("Mời chọn hãng:");
+        System.out.println("1: Oppo.");
+        System.out.println("2: Samsung.");
+        System.out.println("3: Apple.");
+        System.out.println("4: Xiaomi.");
+        System.out.println("5: Dell");
+        System.out.println("6: Asus");
+        System.out.println("7: Vivo");
+    }
+    public void subMenu3() {
+
+        System.out.println("Mời chọn mức giá:");
+        System.out.println("1: Dưới 2 triệu");
+        System.out.println("2: Từ 2 - 4 triệu");
+        System.out.println("3: Từ 4 - 7 triệu");
+        System.out.println("4: Từ 7 - 13 triệu");
+        System.out.println("5: Trên 13 triệu");
+    }
 }

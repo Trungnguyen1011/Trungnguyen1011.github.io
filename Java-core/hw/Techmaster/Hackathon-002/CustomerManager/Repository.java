@@ -191,6 +191,7 @@ public class Repository {
                 case 4:
                     String keyId = scanner.nextLine();
                     searchById(keyId);
+                    break;
                 case 0:
                     using = false;
                     break;

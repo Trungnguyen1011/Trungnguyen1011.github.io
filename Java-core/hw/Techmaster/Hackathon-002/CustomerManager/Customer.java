@@ -77,7 +77,7 @@ public class Customer {
     @Override
     public String toString() {
         return "Id: " + id + ", name: " + name + ", birthday: " + birthday + ", " + gender.getValue() + ", places: " + places
-                + ", mobile" + mobile + ", email: " + email;
+                + ", mobile: " + mobile + ", email: " + email;
     }
 
 }

@@ -178,6 +178,7 @@ public class Repository {
                     switch (chosenGender) {
                         case 1:
                             getMale();
+                            break;
                         case 2:
                             getFemale();
                             break;

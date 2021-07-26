@@ -61,7 +61,7 @@ public class Repository {
         System.out.println("Nhập loại: ");
         System.out.println("1: Thực phẩm\n2: Thời trang\n3: Đồ gia dụng\n4:Mỹ phẩm");
         int type = input.nextInt();
-        while (type <= 0 || type > 4) {
+        while (type < 1 || type > 4) {
             System.out.println("Mời chọn lại. ");
             type = input.nextInt();
         }

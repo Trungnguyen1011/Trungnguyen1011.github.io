@@ -147,7 +147,7 @@ public class Constroller extends Repository {
                     changeUsername();
                     break;
                 case 2:
-                
+                changeEmail();
                     break;
                 case 3:
                     changePassword();

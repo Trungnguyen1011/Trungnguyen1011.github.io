@@ -1,7 +1,8 @@
 GetAll + getbyId
 ![](images/Get.png)
 
-Post![](images/Post.png)
+Post
+![](images/Post.png)
 
 Delete
 ![](images/Delete.png)

@@ -3,8 +3,9 @@ GetAll + getbyId
 
 Post![](images/Post.png)
 
+Delete
+![](images/Delete.png)
+
 Patch
 ![](images/Patch.png)
 
-Delete
-![](images/Delete.png)

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Book</title>
+</head>
+<body>
+    <div th:replace="allbooks.html :: header"></div>
+    <h1>Get Book</h1>
+    <form
+      action="#"
+      th:action="@{/book/getbook}"
+      th:object="${getRequest}"
+      method="post"
+    >
+      <input type="text" placeholder="Id" th:field="*{id}" /><br /><br />
+  
+      <br /><br />
+
+      <button type="submit">Get book with this id</button>
+    </form>
+    <br />
+    <h2>Book</h2> 
+    <div th:text="${book?.title != null} ? |Id: ${book?.id} :${book?.title}: ${book?.description}| : |Id not found|"></div>
+</body>
+</html>

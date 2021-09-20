@@ -1,5 +1,9 @@
-GetAll + getbyId
+GetAll
 ![](images/Get.png)
+
+Get by id
+![](images/Getone.png)
+
 
 Post
 ![](images/Post.png)

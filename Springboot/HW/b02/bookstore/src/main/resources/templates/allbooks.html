@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Store</title>
-</head>
-<body>
-  <ul>
-    <li th:each="book: ${books}">
-      <strong th:text="${book.title}"></strong><br>
-      <p th:text="${book.description}"></p>
-    </li>
-  </ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+  </head>
+  <body>
+    <header th:fragment="header">
+      <a th:href="@{/book}">Home</a> <span></span
+      ><a th:href="@{/book/addbook}">Add Book</a> <span></span>
+      <a th:href="@{/book/removebook}">Remove Book</a>  <span></span>
+      <a th:href="@{/book/getbook}">Get Book</a> <span></span>
+      <a th:href="@{/book/updatebook}">Update Book</a>
+    </header>
+
+    <h2>Current Books</h2>
+    <ul th:fragment="booklist">
+      <li th:each="book: ${books}">
+        <p th:text="|${book.id}: ${book.title}|"></p>
+        <p th:text="${book.description}"></p>
+      </li>
+    </ul>
+  </body>
 </html>

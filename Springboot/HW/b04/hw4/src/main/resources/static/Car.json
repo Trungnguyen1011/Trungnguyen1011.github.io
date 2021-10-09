@@ -1,0 +1,10 @@
+[{"id":1,"model":"Mazda5","manufactor":"Mazda","price":32524,"sales":90,"photo": "https://i1-vnexpress.vnecdn.net/2020/08/26/Mazda-CX-5-1-8867-1598408805.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=Ccj2tz2i-p82dEUMK0z-XA"},
+{"id":2,"model":"Tempo","manufactor":"Ford","price":18247,"sales":158,"photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2dK7UPtrGVqlC9Oysywj3-QULTuL-RCo34g&usqp=CAU"},
+{"id":3,"model":"Golf","manufactor":"Volkswagen","price":45990,"sales":127,"photo":"https://photo-cms-kienthuc.zadn.vn/zoomh/800/uploaded/ctvlanbanh/2019_10_28/volk/volkswagen-golf-2020-moi-chinh-thuc-ra-mat-toan-cau.png"},
+{"id":4,"model":"Edge","manufactor":"Ford","price":37493,"sales":30,"photo":"https://img1.oto.com.vn/2018/07/25/4Cs5VWrI/danh-gia-xe-ford-edg-cb8d_wm.jpg"},
+{"id":5,"model":"Savana Cargo Van","manufactor":"GMC","price":21906,"sales":53,"photo":"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-gmc-savana-mmp-1-1605294601.jpg?crop=1.00xw:0.667xh;0,0.235xh&resize=1200:*"},
+{"id":6,"model":"DeVille","manufactor":"Cadillac","price":24534,"sales":41,"photo":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/1977_Cadillac_Coupe_Deville_%2801%29.jpg/280px-1977_Cadillac_Coupe_Deville_%2801%29.jpg"},
+{"id":7,"model":"S10","manufactor":"Chevrolet","price":18092,"sales":30,"photo":"https://xehay.vn/uploads/images/2017/6/03/xehay-chevrolet-s10-trailboss-190617-1.jpg"},
+{"id":8,"model":"2500","manufactor":"Ram","price":16333,"sales":54,"photo":"https://carpassion.vn/wp-content/uploads/2019/02/mopar-2019-ram-2500-concept-1024x576.jpg"},
+{"id":9,"model":"Avenger","manufactor":"Dodge","price":37863,"sales":111,"photo":"https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/11q1/392364/2011-dodge-avenger-heat-photo-392381-s-986x603.jpg?crop=1.00xw:0.817xh;0,0.183xh&resize=640:*"},
+{"id":10,"model":"Tracer","manufactor":"Mercury","price":22672,"sales":158,"photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgQxjS-B6toI6TzehFnlc0Fznm7Wad9C_57A&usqp=CAU"}]

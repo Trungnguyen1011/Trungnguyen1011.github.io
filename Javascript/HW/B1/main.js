@@ -64,7 +64,7 @@ console.log("B1");
 
 function oddSum(number) {
   let sum = 0;
-  for (let i = 1; i < number; ) {
+  for (let i = 1; i <= number; ) {
     sum += i;
     i += 2;
   }
@@ -79,7 +79,7 @@ console.log("B2");
 
 function multipleSum(minNum, maxNum, range) {
     let sum= 0;
-    for(let i = minNum; i < range;) {
+    for(let i = minNum; i <= range;) {
         if (i % maxNum == 0) {
             sum += i;
         }

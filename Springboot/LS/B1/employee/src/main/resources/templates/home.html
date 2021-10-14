@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div th:fragment="navigator">
+        <a href="/employee">Home</a>
+        <a href="/employee/add">Add</a>
+        <a href="/employee/search">Search</a>
+    </div>
+    <div th:if="${formBox} == true">
+        <form th:action="@{/employee/add}" th:object="${newEmployee}" method="post">
+            <input type="text" placeholder="First Name" th:field="*{firstName}"/><br><br>
+            <input type="text" placeholder="Last Name" th:field="*{lastName}"/><br><br>
+            <input type="text" placeholder="Email" th:field="*{emailId}"/><br><br>
+            <input type="text" placeholder="Passport Number" th:field="*{passportNumber}"/>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div th:if="${showSeacrhBar} == true">
+        <form th:action="@{/employee/search}" th:object="${searchRequest}" method="post">
+            <input type="text" placeholder="Type here" th:field="*{keywords}"/><br><br>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <ul>
+        <li th:each="employee: ${list}">
+          <a th:href="@{/employee/{id}(id=${employee.id})}">
+        <p th:text="|${employee.firstName} ${employee.lastName}|"></p></a>
+        <p th:text="|Email: ${employee.emailId}; Passport: ${employee.passportNumber}.|"></p>
+        </li>
+
+
+</body>
+</html>        

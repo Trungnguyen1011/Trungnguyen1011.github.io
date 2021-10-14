@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+<body>
+    <div th:replace="home.html :: navigator"></div>
+    <h2 th:text="${employee.firstName} + ' ' + ${employee.lastName} "></h2>
+    <p th:text="|Email: ${employee.emailId}|"></p>
+    <p th:text="|Passport: ${employee.passportNumber}.|"></p>
+    <a th:href="@{/employee/{id}/edit(id=${employee.id})}">Edit</a> <a th:href="@{/employee/{id}/delete(id=${employee.id})}">Delete</a>
+
+    <div th:if="${formBox} == true">
+        <form th:action="@{/employee/{id}/edit(id=${employee.id})}" th:object="${employee}" method="post">
+            <input type="text" placeholder="${employee.firstName}" th:field="*{firstName}"/><br><br>
+            <input type="text" placeholder="${employee.lastName}" th:field="*{lastName}"/><br><br>
+            <input type="text" placeholder="${employee.emailId}" th:field="*{emailId}"/><br><br>
+            <input type="text" placeholder="${employee.passportNumber}" th:field="*{passportNumber}"/><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

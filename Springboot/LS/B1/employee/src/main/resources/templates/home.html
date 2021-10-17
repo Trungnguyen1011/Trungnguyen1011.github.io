@@ -1,41 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <div th:fragment="navigator">
-        <a href="/employee">Home</a>
-        <a href="/employee/add">Add</a>
-        <a href="/employee/search">Search</a>
-    </div>
-    <div th:if="${formBox} == true">
-        <form th:action="@{/employee/add}" th:object="${newEmployee}" method="post">
-            <input type="text" placeholder="First Name" th:field="*{firstName}"/><br><br>
-            <input type="text" placeholder="Last Name" th:field="*{lastName}"/><br><br>
-            <input type="text" placeholder="Email" th:field="*{emailId}"/><br><br>
-            <input type="text" placeholder="Passport Number" th:field="*{passportNumber}"/>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
-    <div th:if="${showSeacrhBar} == true">
-        <form th:action="@{/employee/search}" th:object="${searchRequest}" method="post">
-            <input type="text" placeholder="Type here" th:field="*{keywords}"/><br><br>
-            <button type="submit">Search</button>
-        </form>
-    </div>
-
-    <ul>
-        <li th:each="employee: ${list}">
-          <a th:href="@{/employee/{id}(id=${employee.id})}">
-        <p th:text="|${employee.firstName} ${employee.lastName}|"></p></a>
-        <p th:text="|Email: ${employee.emailId}; Passport: ${employee.passportNumber}.|"></p>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title layout:title-pattern="Employee Management - $CONTENT_TITLE "></title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="bg-light">
+    <div>
+    <div class="navbar navbar-expand-md navbar-dark bg-dark">
+      <ul class="navbar-nav pl-2">
+        <li class="nav-item" >
+          <a class="nav-link" href="/employee" th:classappend="${active == 'home'} ? active">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/employee/add" th:classappend="${active == 'add'} ? active">Add</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/employee/search" th:classappend="${active == 'search'} ? active">Search</a>
+        </li>
+      </ul>
+    </div>
+    <div layout:fragment="content" class="container-fluid pl-4 mt-4">
+      <div th:if="${formBox} == true">
+        <form
+          th:action="@{/employee/add}"
+          th:object="${newEmployee}"
+          method="post"
+          class="w-25"
+        >
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First Name"
+            th:field="*{firstName}"
+          /></div>
+          <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Last Name"
+            th:field="*{lastName}"
+          /></div>
+          <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email"
+            th:field="*{emailId}"
+          /></div>
+          <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Passport Number"
+            th:field="*{passportNumber}"
+          /></div>
+                  <button type="submit" class="btn btn-success mt-3">Submit</button>
+        </form>
+      </div>
 
+      <div th:if="${showSeacrhBar} == true" class="w-50">
+        <form
+          th:action="@{/employee/search}"
+          th:object="${searchRequest}"
+          method="post"
+        >
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Type here"
+            th:field="*{keywords}"
+            class="form-control"
+          /></div>
+          <button type="submit" class="btn btn-success mt-3">Search</button>
+        </form>
+      </div>
+      <h2 class="text-secondary" th:if="${showSeacrhBar != true && formBox != true}">List</h2>
 
-</body>
-</html>        
+      <ul class="mt-4 list-group">
+        <li th:each="employee: ${list}" class="list-group-item list-group-item-success">
+          <a th:href="@{/employee/{id}(id=${employee.id})}">
+            <p th:text="|${employee.firstName} ${employee.lastName}|"></p
+          ></a>
+          <p list-group-item
+            th:text="|Email: ${employee.emailId}; Passport: ${employee.passportNumber}.|"
+          ></p>
+        </li>
+      </ul>
+    </div>
+    <footer class="container-fuild text-secondary my-2">
+      <div class="row">
+        <div class="col-md-11"></div>
+        <div class="col-md-1">Da footer</div>
+      </div>
+    
+    
+    </footer>
+  </div>
+  </body>
+</html>

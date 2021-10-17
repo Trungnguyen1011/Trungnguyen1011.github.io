@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +22,7 @@ public class EmployeeController {
     @GetMapping
     public String home(Model model) {
         model.addAttribute("list", employeeDao.getAll());
+        model.addAttribute("active", "home");
         return "home";
     }
 
@@ -35,8 +35,10 @@ public class EmployeeController {
     @GetMapping("/add")
     public String addEmployee(Model model) {
         model.addAttribute("newEmployee", new Employee());
+        model.addAttribute("list", employeeDao.getAll());
         model.addAttribute("formBox", true);
-        return home(model);
+        model.addAttribute("active", "add");
+        return "home";
     }
 
     @PostMapping("/add")
@@ -71,6 +73,7 @@ public class EmployeeController {
     public String search(Model model) {
         model.addAttribute("searchRequest", new SearchRequest());
         model.addAttribute("showSeacrhBar", true);
+        model.addAttribute("active", "search");
         return "home";
     }
 

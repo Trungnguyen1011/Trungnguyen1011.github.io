@@ -1,26 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee</title>
-</head>
-<body>
-    <div th:replace="home.html :: navigator"></div>
-    <h2 th:text="${employee.firstName} + ' ' + ${employee.lastName} "></h2>
-    <p th:text="|Email: ${employee.emailId}|"></p>
-    <p th:text="|Passport: ${employee.passportNumber}.|"></p>
-    <a th:href="@{/employee/{id}/edit(id=${employee.id})}">Edit</a> <a th:href="@{/employee/{id}/delete(id=${employee.id})}">Delete</a>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{home}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div layout:fragment="content" th:classappend="ml-5">
+      <h2 th:text="${employee.firstName} + ' ' + ${employee.lastName} "></h2>
+      <p th:text="|Email: ${employee.emailId}|"></p>
+      <p th:text="|Passport: ${employee.passportNumber}.|"></p>
+      <a
+        th:href="@{/employee/{id}/edit(id=${employee.id})}"
+        class="btn btn-success mt-3"
+        >Edit</a
+      >
+      <a
+        th:href="@{/employee/{id}/delete(id=${employee.id})}"
+        class="btn btn-success mt-3"
+        >Delete</a
+      >
 
-    <div th:if="${formBox} == true">
-        <form th:action="@{/employee/{id}/edit(id=${employee.id})}" th:object="${employee}" method="post">
-            <input type="text" placeholder="${employee.firstName}" th:field="*{firstName}"/><br><br>
-            <input type="text" placeholder="${employee.lastName}" th:field="*{lastName}"/><br><br>
-            <input type="text" placeholder="${employee.emailId}" th:field="*{emailId}"/><br><br>
-            <input type="text" placeholder="${employee.passportNumber}" th:field="*{passportNumber}"/><br><br>
-            <button type="submit">Submit</button>
+      <div th:if="${formBox} == true" class="mt-4">
+        <form
+          th:action="@{/employee/{id}/edit(id=${employee.id})}"
+          th:object="${employee}"
+          method="post"
+          class="w-25"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="${employee.firstName}"
+              th:field="*{firstName}"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="${employee.lastName}"
+              th:field="*{lastName}"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="${employee.emailId}"
+              th:field="*{emailId}"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="${employee.passportNumber}"
+              th:field="*{passportNumber}"
+              class="form-control"
+            />
+          </div>
+          <button type="submit" class="btn btn-success mt-3">Submit</button>
         </form>
+      </div>
     </div>
-</body>
+  </body>
 </html>

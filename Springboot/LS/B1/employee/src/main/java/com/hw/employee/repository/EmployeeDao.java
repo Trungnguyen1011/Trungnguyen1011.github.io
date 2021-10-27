@@ -13,12 +13,15 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.hw.employee.model.Employee;
+import com.hw.employee.service.StorageService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
 
 @Repository
 public class EmployeeDao extends Dao<Employee> {
+  @Autowired StorageService storageService;
   public EmployeeDao() {
     this.readCSV("employees.csv");
   }
@@ -26,12 +29,20 @@ public class EmployeeDao extends Dao<Employee> {
   @Override
   public void add(Employee t) {
     int id;
+
     if (collections.isEmpty()) {
       id = 1;
     } else {
       Employee latestOne = collections.get(collections.size() - 1);
       id = latestOne.getId() + 1;
     }
+    if (t.getPhoto() == null ||t.getPhoto().getOriginalFilename() == "") {
+      t.setPhotoName("default.jpg");
+    } else {
+      t.setPhotoName(t.getPhoto().getOriginalFilename());
+      storageService.uploadFile(t.getPhoto());
+    }
+  
     t.setId(id);
     collections.add(t);
 
@@ -86,9 +97,8 @@ public class EmployeeDao extends Dao<Employee> {
   @Override
   public List<Employee> searchByKeyword(String keyword) {
     String lowerKeyword = keyword.toLowerCase();
-    return collections.stream()
-        .filter(t -> t.getFullName().toLowerCase().contains(lowerKeyword) || t.getEmailId().toLowerCase().contains(lowerKeyword))
-        .collect(Collectors.toList());
+    return collections.stream().filter(t -> t.getFullName().toLowerCase().contains(lowerKeyword)
+        || t.getEmailId().toLowerCase().contains(lowerKeyword)).collect(Collectors.toList());
   }
 
   @Override
@@ -100,7 +110,11 @@ public class EmployeeDao extends Dao<Employee> {
       willBeUpdate.get().setLastName(t.getLastName());
       willBeUpdate.get().setEmailId(t.getEmailId());
       willBeUpdate.get().setPassportNumber(t.getPassportNumber());
-
+      if (t.getPhoto().getOriginalFilename() != "") {
+        willBeUpdate.get().setPhoto(t.getPhoto());
+        willBeUpdate.get().setPhotoName(t.getPhoto().getOriginalFilename());
+        storageService.uploadFile(t.getPhoto());
+      }
     }
   }
 

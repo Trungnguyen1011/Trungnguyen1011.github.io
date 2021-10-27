@@ -1,5 +1,7 @@
 package com.hw.employee.controller;
 
+import javax.validation.Valid;
+
 import com.hw.employee.model.Employee;
 import com.hw.employee.model.SearchRequest;
 import com.hw.employee.repository.EmployeeDao;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,11 +45,15 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public String submitedEmployee(Employee newEmployee, BindingResult result, Model model) {
-        if (!result.hasErrors()) {
+    public String submitedEmployee(@Valid @ModelAttribute(name="newEmployee") Employee newEmployee, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("list", employeeDao.getAll());
+            model.addAttribute("formBox", true);
+            return "home";
+          } else {
             employeeDao.add(newEmployee);
         }
-        return addEmployee(model);
+            return addEmployee(model);
     }
 
     @GetMapping("/{id}/edit")
@@ -57,10 +64,18 @@ public class EmployeeController {
     }
 
     @PostMapping("/{id}/edit")
-    public String edited(@PathVariable("id") int id, Employee employee, BindingResult result, Model model) {
-        employee.setId(id);
-        employeeDao.update(employee);
-        return employee(id, model);
+    public String edited(@PathVariable("id") int id, @Valid @ModelAttribute(name="employee") Employee employee, BindingResult result, Model model) {
+        if (!result.hasErrors()) {
+            employee.setId(id);
+            employeeDao.update(employee);
+        } else {
+            employee.setPhotoName(employeeDao.get(id).get().getPhotoName());
+            model.addAttribute("formBox", true);
+
+            return "individual";
+        }
+
+        return "redirect:/employee/{id}/edit";
     }
 
     @GetMapping("/{id}/delete")

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title layout:title-pattern="Employee Management - $CONTENT_TITLE "></title>
+    <link th:rel="stylesheet" th:href="@{employee/webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+   </head>
+  <body class="bg-light">
+    <div>
+      <div class="navbar navbar-expand-md navbar-dark bg-dark">
+        <ul class="navbar-nav ps-5">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/employee"
+              th:classappend="${active == 'home'} ? active"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/employee/add"
+              th:classappend="${active == 'add'} ? active"
+              >Add</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/employee/search"
+              th:classappend="${active == 'search'} ? active"
+              >Search</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div layout:fragment="content" class="container-fluid ps-4 mt-4">
+        <div th:if="${formBox} == true">
+          <form
+            th:action="@{/employee/add}"
+            th:object="${newEmployee}"
+            method="post"
+            class="w-25"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+                th:field="*{firstName}"
+              />
+              <div class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">sth</div>
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+                th:field="*{lastName}"
+              />
+              <div class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">sth</div>
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                th:field="*{emailId}"
+              />
+              <div class="text-danger" th:if="${#fields.hasErrors('emailId')}" th:errors="*{emailId}">sth</div>
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Passport Number"
+                th:field="*{passportNumber}"
+              />
+              <div class="text-danger" th:if="${#fields.hasErrors('passportNumber')}" th:errors="*{passportNumber}">sth</div>
+            </div>
+            <div class="form-group mb-3">
+             
+                <input type="file" class="form-control" th:field="*{photo}" />
+           
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Submit</button>
+          </form>
+        </div>
+
+        <div th:if="${showSeacrhBar} == true" class="w-50">
+          <form
+            th:action="@{/employee/search}"
+            th:object="${searchRequest}"
+            method="post"
+          >
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Type here"
+                th:field="*{keywords}"
+                class="form-control"
+              />
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Search</button>
+          </form>
+        </div>
+        <h2
+          class="text-secondary"
+          th:if="${showSeacrhBar != true && formBox != true}"
+        >
+          List
+        </h2>
+
+        <ul class="mt-4 list-group">
+          <li
+            th:each="employee: ${list}"
+            class="
+              list-group-item list-group-item-success
+              d-flex
+              align-items-center
+            "
+          >
+            <img
+            class="float-left"
+            style="height: 100px; width: 100px; border-radius: 50px;object-fit:cover"
+              th:src="@{/images/{photoName}(photoName=${employee.photoName})}"
+            />
+            <div class="ps-4">
+              <a th:href="@{/employee/{id}(id=${employee.id})}">
+                <p th:text="|${employee.firstName} ${employee.lastName}|"></p
+              ></a>
+              <p
+                list-group-item
+                th:text="|Email: ${employee.emailId}; Passport: ${employee.passportNumber}.|"
+              ></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <footer class="container-fuild text-secondary my-2">
+        <div class="row">
+          <div class="col-md-11"></div>
+          <div class="col-md-1">Da footer</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

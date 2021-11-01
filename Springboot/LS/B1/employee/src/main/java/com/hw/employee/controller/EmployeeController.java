@@ -4,7 +4,8 @@ import javax.validation.Valid;
 
 import com.hw.employee.model.Employee;
 import com.hw.employee.model.SearchRequest;
-import com.hw.employee.repository.EmployeeDao;
+import com.hw.employee.model.UploadRequest;
+import com.hw.employee.service.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,58 +21,55 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/employee")
 public class EmployeeController {
     @Autowired
-    EmployeeDao employeeDao;
+    EmployeeService employeeService;
 
     @GetMapping
     public String home(Model model) {
-        model.addAttribute("list", employeeDao.getAll());
+        model.addAttribute("list", employeeService.getAll());
         model.addAttribute("active", "home");
         return "home";
     }
 
     @GetMapping("/{id}")
-    public String employee(@PathVariable("id") int id, Model model) {
-        model.addAttribute("employee", employeeDao.get(id).get());
+    public String employee(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("employee", employeeService.getById(id));
         return "individual";
     }
 
     @GetMapping("/add")
     public String addEmployee(Model model) {
         model.addAttribute("newEmployee", new Employee());
-        model.addAttribute("list", employeeDao.getAll());
+        model.addAttribute("list", employeeService.getAll());
         model.addAttribute("formBox", true);
         model.addAttribute("active", "add");
         return "home";
     }
 
     @PostMapping("/add")
-    public String submitedEmployee(@Valid @ModelAttribute(name="newEmployee") Employee newEmployee, BindingResult result, Model model) {
+    public String submitedEmployee(@Valid @ModelAttribute(name="newEmployee") UploadRequest newEmployee, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("list", employeeDao.getAll());
+            model.addAttribute("list", employeeService.getAll());
             model.addAttribute("formBox", true);
             return "home";
           } else {
-            employeeDao.add(newEmployee);
+            employeeService.saveFile(newEmployee);
         }
             return addEmployee(model);
     }
 
     @GetMapping("/{id}/edit")
-    public String editing(@PathVariable("id") int id, Model model) {
-        model.addAttribute("employee", employeeDao.get(id).get());
+    public String editing(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("employee", employeeService.getById(id));
         model.addAttribute("formBox", true);
         return "individual";
     }
 
     @PostMapping("/{id}/edit")
-    public String edited(@PathVariable("id") int id, @Valid @ModelAttribute(name="employee") Employee employee, BindingResult result, Model model) {
+    public String edited(@PathVariable("id") Long id, @Valid @ModelAttribute(name="employee") UploadRequest employee, BindingResult result, Model model) {
         if (!result.hasErrors()) {
-            employee.setId(id);
-            employeeDao.update(employee);
+            employeeService.editFile(employee, id);
         } else {
-            employee.setPhotoName(employeeDao.get(id).get().getPhotoName());
             model.addAttribute("formBox", true);
-
             return "individual";
         }
 
@@ -79,8 +77,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}/delete")
-    public String deleted(@PathVariable("id") int id, Model model) {
-        employeeDao.deleteByID(id);
+    public String deleted(@PathVariable("id") Long id, Model model) {
+        employeeService.deleteFileById(id);
         return home(model);
     }
 
@@ -96,7 +94,7 @@ public class EmployeeController {
     public String seacrhResult(SearchRequest searchRequest, BindingResult result, Model model) {
 
         if (!result.hasErrors()) {
-            model.addAttribute("list", employeeDao.searchByKeyword(searchRequest.getKeywords()));
+            model.addAttribute("list", employeeService.search(searchRequest.getKeywords()));
 
         }
         return search(model);

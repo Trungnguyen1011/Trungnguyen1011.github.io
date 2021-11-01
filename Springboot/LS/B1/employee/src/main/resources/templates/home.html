@@ -133,7 +133,7 @@
             <img
             class="float-left"
             style="height: 100px; width: 100px; border-radius: 50px;object-fit:cover"
-              th:src="@{/images/{photoName}(photoName=${employee.photoName})}"
+              th:src="|data:image/png;base64,${employee.photoName}|"
             />
             <div class="ps-4">
               <a th:href="@{/employee/{id}(id=${employee.id})}">

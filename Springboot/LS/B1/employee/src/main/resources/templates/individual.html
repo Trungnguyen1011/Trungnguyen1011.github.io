@@ -15,7 +15,7 @@
       <img
       class="float-left"
       style="height: 150px; width: 150px; border-radius: 50%;object-fit:cover"
-      th:src="@{/images/{photoName}(photoName=${employee.photoName})}"
+      th:src="|data:image/png;base64,${employee.photoName}|"
     />
      <div class="ms-5"> <h2 th:text="${employee.firstName} + ' ' + ${employee.lastName} "></h2>
       <p th:text="|Email: ${employee.emailId}|"></p>

@@ -1,40 +1,43 @@
 package com.hw.employee.model;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import java.util.Base64;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import org.springframework.web.multipart.MultipartFile;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "Employee")
+@Builder
 public class Employee {
-    private int id;
-    @NotBlank(message = "First name cannot be blank")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String firstName;
-    @NotBlank(message = "Last name cannot be blank")
+
     private String lastName;
-    
-    @NotBlank(message = "Email cannot null")
-    @Email(message = "Not valid email")
+
     private String emailId;
 
-    @NotBlank(message = "Passport Number is required")
     private String passportNumber;
+    
+    @Column(columnDefinition="BLOB")
+    private byte[] photo;
 
-    @JsonIgnore
-    private MultipartFile photo;
-    @JsonIgnore
-    private String photoName;
-
-    public String getFullName() {
-        return getFirstName() + " " + getLastName();
+    public String getPhotoName() {
+        String imageBase64 = Base64.getEncoder().encodeToString(getPhoto());
+        return imageBase64;
     }
-
 }

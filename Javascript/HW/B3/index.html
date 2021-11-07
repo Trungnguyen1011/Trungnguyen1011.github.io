@@ -38,7 +38,6 @@
 
       //b3
       const ul2 = document.getElementById("list");
-      console.log(ul2);
 
       ul2.insertAdjacentHTML("beforeend", "<li>Item 8</li>");
       ul2.insertAdjacentHTML("beforeend", "<li>Item 9</li>");
@@ -49,10 +48,48 @@
       const li3 = ul2.querySelector("li:nth-of-type(3)");
       li3.style.backgroundColor = "green";
 
-
       const newLi = document.createElement("li");
       newLi.innerHTML = "Not 4 anymore";
       ul2.replaceChild(newLi, li3.nextElementSibling);
+
+      // Btap DOM - B1:
+      let form = document.createElement("form");
+      form.innerHTML =
+        " <input type='text' id='input'> <button type='button' id ='addBtn'>Add</button>";
+
+      document.body.insertAdjacentElement("beforeend", form);
+
+      let delBtn = document.createElement("button");
+      delBtn.id = "delBtn";
+      delBtn.innerText = "Delete";
+      document.body.insertAdjacentElement("beforeend", delBtn);
+
+      let displayBtn = document.createElement("button");
+      displayBtn.id = "displayBtn";
+      displayBtn.innerText = "Hide";
+      ul2.insertAdjacentElement("beforebegin", displayBtn);
+
+      document
+        .getElementById("displayBtn")
+        .addEventListener("click", function () {
+          if (displayBtn.innerText === "Hide") {
+            displayBtn.innerText = "Show";
+            ul2.style.display = "none";
+          } else {
+            displayBtn.innerText = "Hide";
+            ul2.style.display = "block";
+          }
+        });
+
+      document.getElementById("addBtn").addEventListener("click", function () {
+        let newLi = document.createElement("li");
+        newLi.innerText = document.getElementById("input").value;
+        ul2.insertAdjacentElement("beforeend", newLi);
+      });
+
+      document.getElementById("delBtn").addEventListener("click", function () {
+        ul2.removeChild(ul2.lastElementChild);
+      });
     </script>
   </body>
 </html>

@@ -30,7 +30,8 @@ public class RESTController {
         return ResponseEntity.ok().body(carRepo.getAllCar());
     }
 
-    @PostMapping(path = "/home", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    
+    @PostMapping(path = "/home")
     public void postCar(Car car) {
      carRepo.addCar(car);
     }

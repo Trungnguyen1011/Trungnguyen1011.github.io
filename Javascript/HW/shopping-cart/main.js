@@ -155,10 +155,11 @@ function updateTotalMoney(arr) {
   for (let i = 0; i < arr.length; i++) {
     totalMoney += arr[i].count * arr[i].price;
   }
-
+  
   subTotalEl.innerText = convertPrice(totalMoney);
   vatEl.innerText = convertPrice(totalMoney * 0.05);
   totalEl.innerText = convertPrice(totalMoney * 1.05);
+  handlePromotionCode();
 }
 
 // handle mã giảm giá
@@ -173,32 +174,34 @@ const promoSubmit = promotion.querySelector("button");
 const discountEl = document.querySelector(".discount");
 
 function handlePromotionCode() {
-  let discount = 0;
-  
-  if (Object.keys(promotionCode).includes(promoInput.value)) {
-    
-    discount = Number(promotionCode[promoInput.value]);
-    promotion.querySelector("p").classList.add("hide");
-    discountEl.classList.remove("hide");
-    discountEl.querySelector("span").innerText = discount + " %";
-    let totalMoney = parseInt(subTotalEl.innerText.replaceAll(".", "").match(/\d+/));
-    console.log(totalMoney);
-    totalEl.innerText = convertPrice(totalMoney * (1.05 - discount / 100));
-  } else {
-    promotion.querySelector("p").classList.remove("hide");
-    iscountEl.classList.add("hide");
-  }
-}
 
+  let discount = 0;
+  discount = Number(promotionCode[promoInput.value]);
+  promotion.querySelector("p").classList.add("hide");
+  discountEl.querySelector("span").innerText = discount + " %";
+  let totalMoney = parseInt(
+    subTotalEl.innerText.replaceAll(".", "").match(/\d+/)
+  );
+
+  if (promoInput.value == "") {
+    discountEl.classList.add("hide");
+  } else {
+    totalEl.innerText = convertPrice(totalMoney * (1.05 - discount / 100));
+  }
+
+  
+}
 
 function submitCode() {
-
-
+  if (Object.keys(promotionCode).includes(promoInput.value)) {
+    handlePromotionCode();
+    discountEl.classList.remove("hide");
+  } else {
+    promotion.querySelector("p").classList.remove("hide");
+    discountEl.classList.add("hide");
+  }
 }
-
-
 
 promoSubmit.addEventListener("click", submitCode);
 
 window.onload = renderProduct(products);
-

@@ -70,25 +70,31 @@ function calculating(num1, num2, ope, result) {
     return false;
   }
 }
-
-let countdown = setInterval(function () {
-  let curTime = timer.innerText - 1;
-  timer.innerText = curTime;
-  globalTime = curTime;
-  if (curTime == 0) {
-    clearInterval(countdown);
-    if (
-      confirm(
-        "Hết giờ, điểm của bạn là: " +
-          score.innerText +
-          "\n" +
-          "Bạn muốn chơi lại chứ?"
-      )
-    ) {
-      globalTime = 45;
-      defaultLoad(0);
+function start() {
+  let countdown = setInterval(function () {
+    let curTime = timer.innerText - 1;
+    timer.innerText = curTime;
+    globalTime = curTime;
+    if (globalTime == 0) {
+      clearInterval(this);
+      if (
+        confirm(
+          "Hết giờ, điểm của bạn là: " +
+            score.innerText +
+            "\n" +
+            "Bạn muốn chơi lại chứ?"
+        )
+      ) {
+        globalTime = 45;
+        defaultLoad(0);
+        start();
+      }
     }
-  }
-}, 1000);
+  }, 1000);
 
-window.onload = defaultLoad(0);
+
+}
+
+
+window.onload = defaultLoad(0), start();
+

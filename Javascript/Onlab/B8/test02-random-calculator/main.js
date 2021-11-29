@@ -76,7 +76,7 @@ function start() {
     timer.innerText = curTime;
     globalTime = curTime;
     if (globalTime == 0) {
-      clearInterval(this);
+      clearInterval(countdown);
       if (
         confirm(
           "Hết giờ, điểm của bạn là: " +

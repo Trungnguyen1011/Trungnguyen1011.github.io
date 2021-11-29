@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="testimonials-container">
+      <i class="fas fa-quote-left"></i>
+      <p class="text"></p>
+      <strong class="name"></strong>
+      <div class="authors-container">
+        <div class="author selected">
+          <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="" />
+        </div>
+        <div class="author">
+          <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="" />
+        </div>
+        <div class="author">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="" />
+        </div>
+        <div class="author">
+          <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="" />
+        </div>
+        <div class="author">
+          <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      let user = [
+        {
+          name: "Louis L’Amour",
+          quote:
+            "* There will come a time when you believe everything is finished. That will be the beginning. - Louis L’Amour",
+          image: "https://randomuser.me/api/portraits/men/41.jpg",
+          color: "red",
+        },
+        {
+          name: "John Muir",
+          quote:
+            "Of all the paths you take in life, make sure a few of them are dirt. - John Muir",
+          image: "https://randomuser.me/api/portraits/women/50.jpg",
+          color: "blue",
+        },
+        {
+          name: "Scott Adams",
+          quote:
+            "Success generally comes after you start. If you think success comes before you start, the world probably looks confusing to you. - Scott Adams",
+          image: "https://randomuser.me/api/portraits/women/22.jpg",
+          color: "pink",
+        },
+        {
+          name: "Coco Chanel",
+          quote:
+            "Dress shabbily and they remember the dress; dress impeccably and they remember the woman. - Coco Chanel",
+          image: "https://randomuser.me/api/portraits/women/76.jpg",
+          color: "whitesmoke",
+        },
+        {
+          name: "Bishop Desmond Tutu",
+          quote:
+            "There comes a point where we need to stop just pulling people out of the river. We need to go upstream and find out why they’re falling in. - Bishop Desmond Tutu",
+          image: "https://randomuser.me/api/portraits/men/17.jpg",
+          color: "orange",
+        },
+      ];
+
+      function normalized(nodeList) {
+        nodeList.forEach((ele) => ele.classList.remove("selected"));
+      }
+      let quote = document.querySelector(".text");
+      let name = document.querySelector(".name");
+      let box = document.querySelector(".testimonials-container");
+      let listUser = document.querySelectorAll(".authors-container .author");
+      console.log(listUser)
+      function change(ele) {
+            ele.addEventListener("click", function (event) {
+              quote.innerText = event.target.quote;
+              name.innerText = event.target.name;
+              normalized(listUser);
+              event.target.classList.add("selected");
+
+              box.style.backgroundColor = event.target.color;
+            });
+          }
+      listUser.forEach(
+        (ele) => change(ele)
+         
+      );
+    </script>
+  </body>
+</html>

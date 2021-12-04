@@ -9,9 +9,13 @@ const result = document.querySelector("#result");
 
 let operators = ["+", "-", "*"];
 
+
 function generateRandom() {
   return Math.floor(Math.random() * 10);
 }
+
+
+
 let globalTime = 45;
 
 function defaultLoad(sc) {
@@ -35,8 +39,8 @@ document.addEventListener("keydown", (event) => {
     ) {
       let newscore = Number(score.innerText) + 1;
 
-      console.log(score);
-      console.log(newscore);
+      // console.log(score);
+      // console.log(newscore);
       result.style.color = "black";
 
       defaultLoad(newscore);
@@ -65,8 +69,8 @@ function calculating(num1, num2, ope, result) {
   if (answer == result) {
     return true;
   } else {
-    console.log(answer);
-    console.log(result);
+    // console.log(answer);
+    // console.log(result);
     return false;
   }
 }
@@ -75,7 +79,7 @@ function start() {
     let curTime = timer.innerText - 1;
     timer.innerText = curTime;
     globalTime = curTime;
-    if (globalTime == 0) {
+    if (globalTime < 0) {
       clearInterval(countdown);
       if (
         confirm(
@@ -88,6 +92,8 @@ function start() {
         globalTime = 45;
         defaultLoad(0);
         start();
+      } else {
+        timer.innerText = 0;
       }
     }
   }, 1000);

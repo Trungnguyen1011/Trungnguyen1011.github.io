@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Nguyễn Tuấn ANh",
+      "name": "Nguyễn Tuấn Fixed",
       "email": "tuananh@gmail.com",
-      "phone": "0965234185",
-      "birthday": "09/02/1995"
+      "phone": "555555555",
+      "birthday": "09/02/1995",
+      "id": 1
     },
     {
       "id": 2,
@@ -15,11 +15,11 @@
       "birthday": "12/05/2002"
     },
     {
-      "id": 3,
-      "name": "Trần Minh Anh",
-      "email": "minhanh@gmail.com",
-      "phone": "0987654321",
-      "birthday": "24/06/1999"
+      "id": 5,
+      "name": "Nguyễn Tuấn ANh",
+      "email": "tuananh@gmail.com",
+      "phone": "0965234185",
+      "birthday": "09/02/1995"
     }
   ]
 }
